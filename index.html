@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html lang="ja"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@700;900&amp;family=Public+Sans:wght@300;400;600&amp;family=Noto+Sans+JP:wght@400;500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-variant": "#e2e3dc",
+                      "on-tertiary-fixed": "#2a1700",
+                      "on-primary-fixed": "#002201",
+                      "on-primary": "#ffffff",
+                      "surface-dim": "#d9dbd3",
+                      "on-error": "#ffffff",
+                      "inverse-on-surface": "#f0f1ea",
+                      "secondary-fixed": "#d7e8ce",
+                      "primary-fixed": "#bcf0ae",
+                      "on-error-container": "#93000a",
+                      "background": "#f9faf2",
+                      "on-tertiary-container": "#ffb451",
+                      "on-secondary-fixed": "#121f0f",
+                      "on-surface-variant": "#42493e",
+                      "secondary-fixed-dim": "#bbcbb3",
+                      "on-secondary-fixed-variant": "#3c4b38",
+                      "on-background": "#191c18",
+                      "secondary": "#54634e",
+                      "outline": "#72796e",
+                      "on-secondary-container": "#596954",
+                      "tertiary": "#533200",
+                      "on-primary-container": "#9dd090",
+                      "surface": "#f9faf2",
+                      "on-tertiary": "#ffffff",
+                      "outline-variant": "#c2c9bb",
+                      "surface-tint": "#3b6934",
+                      "surface-container-highest": "#e2e3dc",
+                      "primary-container": "#2d5a27",
+                      "on-primary-fixed-variant": "#23501e",
+                      "on-tertiary-fixed-variant": "#653e00",
+                      "on-surface": "#191c18",
+                      "tertiary-fixed": "#ffddb8",
+                      "on-secondary": "#ffffff",
+                      "surface-container-low": "#f3f4ed",
+                      "inverse-primary": "#a1d494",
+                      "primary-fixed-dim": "#a1d494",
+                      "secondary-container": "#d7e8ce",
+                      "surface-bright": "#f9faf2",
+                      "primary": "#154212",
+                      "surface-container-high": "#e7e9e1",
+                      "error-container": "#ffdad6",
+                      "surface-container": "#edefe7",
+                      "tertiary-fixed-dim": "#ffb95f",
+                      "surface-container-lowest": "#ffffff",
+                      "error": "#ba1a1a",
+                      "tertiary-container": "#724700",
+                      "inverse-surface": "#2e312c"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "fontFamily": {
+                      "headline": ["Noto Serif JP", "serif"],
+                      "body": ["Noto Sans JP", "sans-serif"],
+                      "label": ["Public Sans", "sans-serif"]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .serif-title { font-family: 'Noto Serif JP', serif; }
+        .sans-body { font-family: 'Noto Sans JP', sans-serif; }
+        .label-style { font-family: 'Public Sans', sans-serif; }
+        .signature-gradient { background: linear-gradient(135deg, #154212 0%, #2d5a27 100%); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface sans-body overflow-x-hidden">
+<!-- Top Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md shadow-sm">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-6 h-20">
+<span class="serif-title text-2xl font-bold text-primary">Ezo Kikaku</span>
+<button class="md:hidden p-2 text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<!-- Desktop Links Hidden on Mobile -->
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Solutions</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Pain Points</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">FAQ</a>
+<button class="bg-primary px-6 py-2 rounded-xl text-on-primary font-bold">Quick Contact</button>
+</div>
+</div>
+</nav>
+<main class="mt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[600px] flex items-center px-6 py-16 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-20 grayscale" data-alt="aerial view of an organized urban parking lot with green spaces nearby" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCH0Yp-YpXfN_w1Gz8P5p2H_qXvS_vK1yJ_9Gz1_wXvY_vL_vK_vO_vR_vS_vT_vU_vV_vW_vX_vY_vZ_vA_vB_vC_vD_vE_vF_vG_vH_vI_vJ_vK_vL_vM_vN_vO_vP_vQ_vR_vS_vT_vU_vV_vW_vX_vY_vZ_vA_vB_vC_vD_vE_vF_vG_vH_vI_vJ_vK_vL_vM_vN_vO_vP_vQ_vR_vS_vT_vU_vV_vW_vX_vY_vZ"/>
+</div>
+<div class="relative z-10 w-full">
+<div class="mb-6 flex gap-4">
+<!-- Heritage Badges -->
+<div class="w-20 h-20 flex flex-col items-center justify-center bg-surface-variant rounded-full -rotate-6 shadow-sm">
+<span class="label-style text-[10px] uppercase tracking-tighter text-on-surface-variant font-bold leading-none">Since</span>
+<span class="serif-title text-xl font-black text-primary">1967</span>
+</div>
+</div>
+<p class="label-style text-xs font-bold uppercase tracking-[0.2em] text-primary mb-4">Parking Lot Management Expert</p>
+<h1 class="serif-title text-3xl leading-snug font-black text-on-surface mb-6">
+                    あなたの大切な土地、<br/>
+                    駐車場運営で<br/>
+                    『安心』と『安定』の資産に。
+                </h1>
+<p class="sans-body text-on-surface-variant leading-relaxed mb-10 max-w-xs">
+                    創業1967年。50年以上の実績とノウハウで、土地の価値を最大化します。
+                </p>
+<button class="signature-gradient w-full py-5 rounded-xl text-on-primary font-bold text-lg shadow-xl active:scale-95 transition-transform flex items-center justify-center gap-2">
+                    無料相談を開始する
+                    <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</section>
+<!-- Pain Points -->
+<section class="py-16 px-6 bg-surface-container-low">
+<div class="text-center mb-12">
+<h2 class="serif-title text-2xl font-bold mb-2">土地活用のお悩み</h2>
+<div class="w-12 h-1 bg-primary mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 gap-4">
+<!-- Pain Point 1 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border-l-4 border-error/30">
+<div class="flex items-center gap-4 mb-3">
+<span class="material-symbols-outlined text-error">trending_down</span>
+<h3 class="sans-body font-bold text-on-surface">維持費・税金が重荷</h3>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">遊休地の固定資産税や管理コストだけがかさみ、収益が生まれない状態を改善したい。</p>
+</div>
+<!-- Pain Point 2 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border-l-4 border-error/30">
+<div class="flex items-center gap-4 mb-3">
+<span class="material-symbols-outlined text-error">report_problem</span>
+<h3 class="sans-body font-bold text-on-surface">不法投棄・トラブル</h3>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">空き地の不法投棄、雑草対策、近隣クレームへの対応が負担になっている。</p>
+</div>
+<!-- Pain Point 3 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border-l-4 border-error/30">
+<div class="flex items-center gap-4 mb-3">
+<span class="material-symbols-outlined text-error">edit_square</span>
+<h3 class="sans-body font-bold text-on-surface">管理の手間を省きたい</h3>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">集金や清掃、除雪、契約者とのやり取りなど、煩雑な業務から解放されたい。</p>
+</div>
+</div>
+</section>
+<!-- Solutions -->
+<section class="py-20 px-6">
+<h2 class="serif-title text-2xl font-bold mb-12 text-center">駐車場運営のトータルサポート</h2>
+<div class="space-y-16">
+<!-- Solution 1 -->
+<div class="relative">
+<div class="aspect-[4/3] rounded-xl overflow-hidden mb-6">
+<img class="w-full h-full object-cover" data-alt="clean, well-marked asphalt parking lot with professional signage" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_p_X_V_K_X_O_vT_vR_vL_vW_vS_vW_vB_vC_vD_vE_vF_vG_vH_vI_vJ_vK_vL_vM_vN_vO_vP_vQ_vR_vS_vT_vU_vV_vW_vX_vY_vZ_vA_vB_vC_vD_vE_vF_vG_vH_vI_vJ_vK_vL_vM_vN_vO_vP_vQ_vR_vS_vT_vU_vV_vW_vX_vY_vZ"/>
+</div>
+<div class="absolute -top-4 -left-4 w-12 h-12 signature-gradient flex items-center justify-center rounded-lg shadow-lg">
+<span class="text-on-primary font-black text-xl">01</span>
+</div>
+<h3 class="serif-title text-xl font-bold mb-3">一括借上げ（サブリース）</h3>
+<p class="sans-body text-on-surface-variant leading-relaxed">当社が土地を一括して借り上げ、稼働状況に関わらず毎月一定の賃料をお支払いします。</p>
+</div>
+<!-- Solution 2 -->
+<div class="relative">
+<div class="aspect-[4/3] rounded-xl overflow-hidden mb-6">
+<img class="w-full h-full object-cover" data-alt="professional maintenance crew cleaning a parking lot and managing landscaping" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_q_Z_S_R_V_W_X_Y_Z_A_B_C_D_E_F_G_H_I_J_K_L_M_N_O_P_Q_R_S_T_U_V_W_X_Y_Z_A_B_C_D_E_F_G_H_I_J_K_L_M_N_O_P_Q_R_S_T_U_V_W_X_Y_Z_A_B_C_D_E_F_G_H_I_J_K_L_M_N_O_P_Q_R_S_T_U_V_W_X_Y_Z"/>
+</div>
+<div class="absolute -top-4 -left-4 w-12 h-12 signature-gradient flex items-center justify-center rounded-lg shadow-lg">
+<span class="text-on-primary font-black text-xl">02</span>
+</div>
+<h3 class="serif-title text-xl font-bold mb-3">高品質な管理・清掃体制</h3>
+<p class="sans-body text-on-surface-variant leading-relaxed">定期巡回、清掃、除雪（北海道エリア）など、土地の美観と価値を維持する徹底管理を行います。</p>
+</div>
+<!-- Solution 3 -->
+<div class="relative">
+<div class="aspect-[4/3] rounded-xl overflow-hidden mb-6">
+<img class="w-full h-full object-cover" data-alt="modern parking payment machine and security camera system" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_r_T_W_Y_Z_A_B_C_D_E_F_G_H_I_J_K_L_M_N_O_P_Q_R_S_T_U_V_W_X_Y_Z_A_B_C_D_E_F_G_H_I_J_K_L_M_N_O_P_Q_R_S_T_U_V_W_X_Y_Z_A_B_C_D_E_F_G_H_I_J_K_L_M_N_O_P_Q_R_S_T_U_V_W_X_Y_Z"/>
+</div>
+<div class="absolute -top-4 -left-4 w-12 h-12 signature-gradient flex items-center justify-center rounded-lg shadow-lg">
+<span class="text-on-primary font-black text-xl">03</span>
+</div>
+<h3 class="serif-title text-xl font-bold mb-3">最適な設備・レイアウト提案</h3>
+<p class="sans-body text-on-surface-variant leading-relaxed">コインパーキングから月極まで、立地調査に基づき収益を最大化する設計をご提案します。</p>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-16 px-6 bg-primary-container text-on-primary text-center">
+<h2 class="serif-title text-2xl font-bold mb-6">眠っている土地を、<br/>確かな収益の源に。</h2>
+<p class="sans-body opacity-90 mb-10 text-sm">まずはお悩みをお聞かせください。私たちが全力でサポートします。</p>
+<button class="bg-tertiary-fixed text-on-tertiary-fixed w-full py-5 rounded-xl font-black text-lg shadow-2xl active:scale-95 transition-transform">
+                今すぐ資料請求
+            </button>
+</section>
+<!-- FAQ -->
+<section class="py-20 px-6 bg-surface-container-low">
+<h2 class="serif-title text-2xl font-bold mb-10 text-center">よくあるご質問</h2>
+<div class="space-y-4">
+<details class="group bg-surface-container-lowest rounded-xl p-5 shadow-sm">
+<summary class="flex justify-between items-center cursor-pointer list-none font-bold text-on-surface">
+<span>狭い土地や変形地でも可能ですか？</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="mt-4 text-sm text-on-surface-variant leading-relaxed border-t border-outline-variant/20 pt-4">
+                        はい、可能です。車1台分のスペースから、複雑な形状の土地まで、最適なレイアウトをご提案いたします。
+                    </div>
+</details>
+<details class="group bg-surface-container-lowest rounded-xl p-5 shadow-sm">
+<summary class="flex justify-between items-center cursor-pointer list-none font-bold text-on-surface">
+<span>初期費用はどのくらいかかりますか？</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="mt-4 text-sm text-on-surface-variant leading-relaxed border-t border-outline-variant/20 pt-4">
+                        一括借上げプランの場合、舗装や機器の設置費用を当社が負担するケースもございます。条件により異なりますので、まずはご相談ください。
+                    </div>
+</details>
+<details class="group bg-surface-container-lowest rounded-xl p-5 shadow-sm">
+<summary class="flex justify-between items-center cursor-pointer list-none font-bold text-on-surface">
+<span>将来的に転用することは可能ですか？</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="mt-4 text-sm text-on-surface-variant leading-relaxed border-t border-outline-variant/20 pt-4">
+                        駐車場は建物がないため、比較的短期の契約解除も可能です。将来の売却や建築計画に合わせた暫定的な活用としても最適です。
+                    </div>
+</details>
+</div>
+</section>
+<!-- Contact Form -->
+<section class="py-20 px-6">
+<div class="text-center mb-12">
+<h2 class="serif-title text-2xl font-bold mb-2">お問い合わせ</h2>
+<p class="sans-body text-sm text-on-surface-variant">2営業日以内に担当よりご連絡いたします。</p>
+</div>
+<form class="space-y-6">
+<div>
+<label class="label-style text-xs font-bold uppercase text-on-surface-variant mb-2 block">Name / お名前</label>
+<input class="w-full bg-surface-container-high border-none rounded-t-none rounded-b-sm py-4 px-4 focus:ring-2 focus:ring-primary/20 transition-all" placeholder="山田 太郎" type="text"/>
+</div>
+<div>
+<label class="label-style text-xs font-bold uppercase text-on-surface-variant mb-2 block">Email / メールアドレス</label>
+<input class="w-full bg-surface-container-high border-none rounded-t-none rounded-b-sm py-4 px-4 focus:ring-2 focus:ring-primary/20 transition-all" placeholder="example@domain.com" type="email"/>
+</div>
+<div>
+<label class="label-style text-xs font-bold uppercase text-on-surface-variant mb-2 block">Inquiry / ご相談内容</label>
+<textarea class="w-full bg-surface-container-high border-none rounded-t-none rounded-b-sm py-4 px-4 focus:ring-2 focus:ring-primary/20 transition-all" placeholder="ご相談内容をこちらに入力してください" rows="4"></textarea>
+</div>
+<button class="signature-gradient w-full py-5 rounded-xl text-on-primary font-bold text-lg shadow-lg active:scale-95 transition-transform" type="submit">
+                    メッセージを送信
+                </button>
+</form>
+</section>
+<!-- Trust Badges Section -->
+<section class="py-12 px-6 flex justify-center items-center gap-10 opacity-70">
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-4xl mb-2 text-primary">local_parking</span>
+<span class="sans-body text-[10px] font-bold text-center">全日本不動産協会会員</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-4xl mb-2 text-primary">verified</span>
+<span class="sans-body text-[10px] font-bold text-center">創業50年以上</span>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="bg-emerald-950 py-16 px-8 text-emerald-50">
+<div class="max-w-7xl mx-auto flex flex-col gap-8">
+<span class="serif-title text-xl font-bold text-emerald-50">Ezo Kikaku</span>
+<div class="grid grid-cols-2 gap-y-6 gap-x-4">
+<a class="font-sans text-sm tracking-wide uppercase text-emerald-100/60 hover:text-orange-200" href="#">Privacy Policy</a>
+<a class="font-sans text-sm tracking-wide uppercase text-emerald-100/60 hover:text-orange-200" href="#">Terms of Service</a>
+<a class="font-sans text-sm tracking-wide uppercase text-emerald-100/60 hover:text-orange-200" href="#">Association Member</a>
+<a class="font-sans text-sm tracking-wide uppercase text-emerald-100/60 hover:text-orange-200" href="#">Corporate Profile</a>
+</div>
+<div class="pt-8 border-t border-emerald-900/50">
+<p class="font-sans text-[10px] tracking-widest uppercase opacity-60">© 1967 Ezo Kikaku. All Rights Reserved. Managed Stability.</p>
+</div>
+</div>
+</footer>
+</body></html>
