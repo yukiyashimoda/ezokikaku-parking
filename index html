@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+
+<html lang="ja"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ezo Kikaku | 駐車場運営・土地活用のエキスパート</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@700;800&amp;family=Noto+Sans+JP:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#f4fbfa",
+                        "tertiary-fixed-dim": "#5ddac8",
+                        "secondary-fixed-dim": "#55d8e5",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-low": "#eef5f4",
+                        "secondary-fixed": "#85f3ff",
+                        "on-tertiary-container": "#f2fffb",
+                        "on-background": "#161d1d",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "surface-container-high": "#e2eae9",
+                        "inverse-primary": "#b4c5ff",
+                        "on-secondary-container": "#006d76",
+                        "on-primary-container": "#fdfbff",
+                        "on-error": "#ffffff",
+                        "secondary": "#006971",
+                        "inverse-on-surface": "#ebf2f1",
+                        "primary": "#1752cc",
+                        "tertiary-fixed": "#7cf7e4",
+                        "on-surface": "#161d1d",
+                        "error": "#ba1a1a",
+                        "outline-variant": "#c3c6d6",
+                        "surface-tint": "#1d55cf",
+                        "surface-container-highest": "#dde4e3",
+                        "on-secondary-fixed-variant": "#004f55",
+                        "on-secondary-fixed": "#002023",
+                        "surface": "#f4fbfa",
+                        "on-surface-variant": "#434654",
+                        "on-error-container": "#93000a",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "surface-dim": "#d4dbdb",
+                        "tertiary-container": "#008376",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed": "#00174b",
+                        "on-secondary": "#ffffff",
+                        "surface-container": "#e8efee",
+                        "surface-variant": "#dde4e3",
+                        "surface-bright": "#f4fbfa",
+                        "outline": "#737685",
+                        "primary-fixed": "#dbe1ff",
+                        "primary-container": "#3c6ce6",
+                        "on-tertiary-fixed-variant": "#005048",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#00685d",
+                        "on-tertiary-fixed": "#00201c",
+                        "secondary-container": "#73f2ff",
+                        "inverse-surface": "#2b3231"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope", "Noto Sans JP"],
+                        "body": ["Inter", "Noto Sans JP"],
+                        "label": ["Inter", "Noto Sans JP"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', 'Noto Sans JP', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', 'Noto Sans JP', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-[0_12px_32px_-4px_rgba(22,29,29,0.06)]">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-8 py-4">
+<div class="text-2xl font-black text-blue-800 dark:text-blue-200 tracking-tighter font-['Manrope']">
+                Ezo Kikaku
+            </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-blue-700 dark:text-blue-400 border-b-2 border-blue-700 dark:border-blue-400 pb-1 font-bold tracking-tight" href="#">Philosophy</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors font-bold tracking-tight" href="#">Services</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors font-bold tracking-tight" href="#">Trust</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors font-bold tracking-tight" href="#">Contact</a>
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-8 py-3 rounded-md font-bold scale-95 active:scale-90 transition-transform shadow-lg">
+                    Free Consultation
+                </button>
+</div>
+<button class="md:hidden p-2 text-on-surface">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</nav>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex items-center overflow-hidden bg-surface">
+<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-7 z-10">
+<div class="inline-flex items-center px-4 py-2 bg-tertiary-container text-on-tertiary-container rounded-full text-sm font-bold mb-8 shadow-sm">
+<span class="material-symbols-outlined text-sm mr-2" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+                        創業1967年・50年以上の信頼
+                    </div>
+<h1 class="text-5xl lg:text-7xl font-extrabold text-on-surface leading-[1.1] tracking-tighter mb-8">
+                        あなたの大切な土地、<br/>
+<span class="text-primary bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary-container">駐車場運営</span>で<br/>
+                        安定した収入源に。
+                    </h1>
+<p class="text-xl text-on-surface-variant leading-relaxed mb-10 max-w-2xl">
+                        50年以上培ってきたノウハウで、あなたの土地に新しい価値を。えぞ企画は、オーナー様に寄り添う不動産のパートナーです。
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-10 py-5 rounded-xl font-bold text-lg shadow-xl hover:opacity-90 transition-all flex items-center justify-center">
+                            無料相談を申し込む
+                            <span class="material-symbols-outlined ml-2" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<button class="bg-surface-container-highest text-primary px-10 py-5 rounded-xl font-bold text-lg hover:bg-surface-container-high transition-all flex items-center justify-center">
+                            サービス詳細を見る
+                        </button>
+</div>
+</div>
+<div class="lg:col-span-5 relative">
+<div class="relative z-10 rounded-[2rem] overflow-hidden shadow-2xl transform lg:translate-x-12 lg:rotate-2">
+<img alt="Modern Parking Structure" class="w-full h-auto aspect-[4/5] object-cover" data-alt="Modern architectural photography of a clean organized urban parking lot with sleek concrete structures and warm sunlight highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAd7-fsrwawgkvYrXira1dWIeUlQnvScI_7I7guTK0Y1NBcqONZ4OVcI-ucHTduRp3WXCP8N7V6S_34KivwmCBHRMHe1jGW1cFLTgYRDBCUy0qYYJBlEeumNRs62q10WTmn3HAZ0cLU9aJANB2vimWeJiDL86uAQbCxqREFUeEJeQxJ_IXa0eoM8OMJ82BpjE1nS-rxUHyzeX4nk2TfPHutArAkJmiBNGr8c3XuivYwTCWuSZHcIMlG0l7QcxmT8zyHMGBu_cMHSws"/>
+</div>
+<div class="absolute -bottom-6 -left-6 bg-surface-container-lowest p-8 rounded-2xl shadow-xl z-20 max-w-[240px]">
+<div class="text-4xl font-black text-primary mb-1">50+</div>
+<div class="text-sm font-bold text-on-surface tracking-tight">Years of Expertise</div>
+<div class="mt-4 text-xs text-on-surface-variant leading-tight">半世紀にわたる土地活用の実績。</div>
+</div>
+</div>
+</div>
+<!-- Background Decorative Element -->
+<div class="absolute top-0 right-0 -z-0 opacity-10">
+<svg fill="none" height="600" viewbox="0 0 600 600" width="600" xmlns="http://www.w3.org/2000/svg">
+<circle cx="300" cy="300" fill="url(#paint0_linear)" r="300"></circle>
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="paint0_linear" x1="0" x2="600" y1="0" y2="600">
+<stop stop-color="#1752cc"></stop>
+<stop offset="1" stop-color="#3c6ce6"></stop>
+</lineargradient>
+</defs>
+</svg>
+</div>
+</section>
+<!-- Trust & History Section -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+<div>
+<h2 class="text-3xl lg:text-4xl font-extrabold text-on-surface mb-6 leading-tight">
+                            創業1967年。<br/>
+                            半世紀を超える信頼と実績。
+                        </h2>
+<p class="text-lg text-on-surface-variant leading-relaxed mb-8">
+                            えぞ企画は、1967年の創業以来、北海道を中心に多くのオーナー様の土地活用をサポートしてまいりました。全日本不動産協会に所属し、透明性の高い誠実な運営を徹底しています。
+                        </p>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm">
+<span class="material-symbols-outlined text-primary mb-3 block" data-icon="account_balance">account_balance</span>
+<p class="text-sm font-bold text-on-surface">全日不動産協会所属</p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm">
+<span class="material-symbols-outlined text-primary mb-3 block" data-icon="domain">domain</span>
+<p class="text-sm font-bold text-on-surface">多数の管理物件数</p>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-6">
+<div class="space-y-6 pt-12">
+<div class="bg-white p-2 rounded-2xl shadow-lg">
+<img alt="Office Building" class="rounded-xl object-cover h-48 w-full" data-alt="Modern glass skyscraper reflection with clear blue sky representing corporate stability and trust" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDK4BS4gbr_oEFIGTx2JM0fmrTcZRdGTkVg-z2aSo2VwQ6fhP2aVDD6AJ0oDvECI4nkidKKug6LaGVoBOFD89X6qaukchWWF2M0mxpG3ekOgF1WCELMlWMJG0h0Nhm6tPzaAjxJYVDtM2HjWgbKToXNShlOBourSepjEy70HXKKOEpRB4NnPVRK_fMsNLeI02DNM8_Yhdlgxy-4bcrUYTwITINMqrP6ut-qENaX1vjx9iLxWAVu9h53ZNZ2mpHfyWjaxsvfs9un5WQ"/>
+</div>
+<div class="bg-white p-2 rounded-2xl shadow-lg">
+<img alt="Consultation" class="rounded-xl object-cover h-64 w-full" data-alt="Close-up of professional business hands reviewing real estate blueprints on a clean desk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiKEDOgdylUQ9JVnpt6oQCrpFJR3kokMyLCpJPKGBfHtdWTuym3HU-i_Z0eJu9qsnLl_vn-CCDHVs-wm8dGZFj_pNusbsOxZo5H6-MfgWmPnFPR8zid_v7HLEerc0Jq2zlJaMbuZUYKsWVhpHGugNLrk6aqAAX6yfdp3hMzEEj1GXi0sTHziZGF3pu63f-glEOAVQAHHedioeAwpVRO0y7RI6xSGaZkB4e8lYQ12eUymJobMqh5mVDn7TICx1iJLk9WCuanDDzK6w"/>
+</div>
+</div>
+<div class="space-y-6">
+<div class="bg-white p-2 rounded-2xl shadow-lg">
+<img alt="Parking" class="rounded-xl object-cover h-64 w-full" data-alt="High-angle shot of a meticulously clean and well-lit parking garage with bright floor markings" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBA1mh_rnDZBslbRoaNF3eESYP3DO4o6RJNfAit7CaFudEpzUgOd6oznIbTFTvIciq6-mA_vPNKSQUhW45H31Bk_KB2MFJ4ukEhoVb8B-u5gSplYHVeMUu_2ZXY9HjZGflXTn3sBdOb_j3IMwT1_OiT5iRqCPpShrbFeqBIYJX9T98KIGZK_4BgVrUCK63BvwPJMHD9co1f4_y4blLTxqDjO-vO5uX4VrabPbMSDc37fzK_KicyLCTR6y2p8tcIwba0H3HyF6U4XKE"/>
+</div>
+<div class="bg-white p-2 rounded-2xl shadow-lg">
+<img alt="Team" class="rounded-xl object-cover h-48 w-full" data-alt="Professional office interior with collaborative team environment and bright airy atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD83LeDS1koASrM1PjPBVvMbgG08V8PD-2_i8jzc4qEEx7BWzTjqcsIVBZBCMm0taeQPabsuyxCNt1mi0-59WFy2F790p1RkXsNmK5KiKLYQWmMn5FqncX2Wj9hrqEVdDcNXECFi6gOUPtzB5oF4_-VBrpxu5ZLA0nkctNfs7odCIG26yeG6P6c_g38Z1JIlmpkads9TycxJWhLo1-v-zT8DGHSAjk4Pxo8ECrE7qdi_f6_ZOnGYm76gAIOMq5dHYUH99e5T3NDknw"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Service Benefits - Bento Grid -->
+<section class="py-24 bg-surface">
+<div class="max-w-7xl mx-auto px-8">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-extrabold text-on-surface mb-4">選ばれる4つの理由</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">オーナー様の負担を最小限に、収益を最大化するための充実したサポート体制。</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Large Feature -->
+<div class="md:col-span-2 bg-surface-container-lowest p-10 rounded-3xl shadow-sm border border-outline-variant/10 hover:shadow-xl transition-all group">
+<div class="flex flex-col md:flex-row gap-8 items-center">
+<div class="flex-1">
+<div class="w-14 h-14 bg-primary/10 text-primary rounded-2xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-3xl" data-icon="payments" style="font-variation-settings: 'FILL' 1;">payments</span>
+</div>
+<h3 class="text-2xl font-bold text-on-surface mb-4">安定した賃料収入</h3>
+<p class="text-on-surface-variant leading-relaxed">
+                                    空き状況に関わらず、毎月一定の賃料をお支払いする一括借り上げ方式（サブリース）も提供。景気に左右されない安定した資産運用が可能です。
+                                </p>
+</div>
+<div class="flex-1 w-full h-48 bg-surface-container-high rounded-2xl overflow-hidden">
+<img alt="Income stability" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Close-up of a tablet showing growth charts and financial data in a professional setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4M3sIqGx58iq0nkOzc3XchXqyKJ4AWlLFtHrxoQiyh0HJUaFnN9JBigj9lCwl3z6Prn7dtX3ZNUGqjkHMuD8kR6SLqTZZWk1x0eBJR81h9RNzqJjnVXDQzpZFelbRsyOaOVVFFRkX3YFbaTzeHDCv7qc_wyWlNpaOMM8kRjkpp_opy5uXk52xiy_N2M_AciXJekgw8dx4BGtKttF_m9fXPII5DFyaKT98J6Rr3tqnEYF6tziCAACgRBhSJG8KNS2_dR2RmxSWy-o"/>
+</div>
+</div>
+</div>
+<!-- Small Feature -->
+<div class="bg-surface-container-lowest p-10 rounded-3xl shadow-sm border border-outline-variant/10 hover:shadow-xl transition-all text-center">
+<div class="w-14 h-14 bg-secondary/10 text-secondary rounded-2xl flex items-center justify-center mb-6 mx-auto">
+<span class="material-symbols-outlined text-3xl" data-icon="price_check">price_check</span>
+</div>
+<h3 class="text-xl font-bold text-on-surface mb-4">初期費用0円プラン</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">
+                            機器の設置から工事まで、えぞ企画が負担するプランをご用意。手出し資金なしでスタートできます。
+                        </p>
+</div>
+<!-- Small Feature -->
+<div class="bg-surface-container-lowest p-10 rounded-3xl shadow-sm border border-outline-variant/10 hover:shadow-xl transition-all text-center">
+<div class="w-14 h-14 bg-tertiary/10 text-tertiary rounded-2xl flex items-center justify-center mb-6 mx-auto">
+<span class="material-symbols-outlined text-3xl" data-icon="support_agent">support_agent</span>
+</div>
+<h3 class="text-xl font-bold text-on-surface mb-4">24時間フルサポート</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">
+                            トラブル対応から清掃、集金まで全て代行。オーナー様は手間をかけることなく運用いただけます。
+                        </p>
+</div>
+<!-- Medium Feature -->
+<div class="md:col-span-2 bg-gradient-to-br from-primary to-primary-container p-10 rounded-3xl shadow-lg text-on-primary">
+<div class="flex flex-col md:flex-row gap-8 items-center h-full">
+<div class="flex-1">
+<h3 class="text-2xl font-bold mb-4">柔軟な土地活用提案</h3>
+<p class="opacity-90 leading-relaxed">
+                                    狭小地、変形地、将来の建設計画がある土地など、あらゆる条件に合わせて最適な駐車場レイアウトを設計いたします。
+                                </p>
+</div>
+<div class="grid grid-cols-2 gap-3 w-full md:w-auto">
+<div class="bg-white/10 backdrop-blur-md p-4 rounded-xl text-center">
+<div class="font-bold text-lg">コイン</div>
+</div>
+<div class="bg-white/10 backdrop-blur-md p-4 rounded-xl text-center">
+<div class="font-bold text-lg">月極</div>
+</div>
+<div class="bg-white/10 backdrop-blur-md p-4 rounded-xl text-center">
+<div class="font-bold text-lg">併用</div>
+</div>
+<div class="bg-white/10 backdrop-blur-md p-4 rounded-xl text-center">
+<div class="font-bold text-lg">駐輪</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Philosophy Section -->
+<section class="py-32 relative overflow-hidden bg-inverse-surface text-inverse-on-surface">
+<div class="max-w-7xl mx-auto px-8 relative z-10 text-center">
+<span class="text-primary-container font-bold tracking-widest text-sm uppercase mb-4 block">Philosophy</span>
+<blockquote class="text-3xl md:text-5xl font-extrabold leading-tight mb-12 max-w-4xl mx-auto italic">
+                    「土地は、人生の中でも特に貴重な財産。<br/>
+                    だからこそ信頼できるパートナーにお任せいただきたい。」
+                </blockquote>
+<p class="text-xl font-bold text-primary-container mb-8">あなたの土地に新しい価値を。駐車場運営はえぞ企画。</p>
+<div class="h-1 w-24 bg-primary mx-auto rounded-full"></div>
+</div>
+<div class="absolute inset-0 opacity-10">
+<img alt="Architectural texture" class="w-full h-full object-cover" data-alt="Macro texture of smooth gray concrete with minimalist architectural lines and deep shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5Fu16Bgpd7zWSeerTo48vurwNCa62IQ9aiyD5_-H5sEmZlrn3uJhZdG0be0H5Hqww4kNYgM0HOkKq4jFfmW5MecBUawZLWecKl2IVBHSP6XhquOOdo9_VDaSeOJny1D7LgB_lhyT0WACSFYXEkneDjZJm2bfCjCa5ItxLL0SXwJPX7NLWUuU7ZCb10t_YzClC8X8EoOZA0SfHfnoydyy3SNlw-Y_UM7qRQgzRfnIDIrh6v6P0m-09XOLibo8b3zoIvNaw_oJzPds"/>
+</div>
+</section>
+<!-- Contact/CTA Footer -->
+<section class="py-24 bg-surface">
+<div class="max-w-4xl mx-auto px-8">
+<div class="bg-surface-container-lowest p-12 rounded-[2.5rem] shadow-2xl relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16"></div>
+<div class="relative z-10 text-center">
+<h2 class="text-3xl font-extrabold text-on-surface mb-6">まずはお気軽にご相談ください</h2>
+<p class="text-on-surface-variant mb-10">
+                            専門スタッフが現地を調査し、収支シミュレーションを無料で作成いたします。
+                            無理な勧誘は一切ございませんのでご安心ください。
+                        </p>
+<div class="flex flex-col items-center gap-6">
+<button class="w-full sm:w-auto bg-primary text-on-primary px-12 py-5 rounded-2xl font-bold text-xl shadow-xl hover:scale-105 transition-transform flex items-center justify-center">
+<span class="material-symbols-outlined mr-3" data-icon="mail">mail</span>
+                                無料相談・査定を依頼する
+                            </button>
+<div class="flex items-center gap-4 text-primary">
+<span class="material-symbols-outlined text-4xl" data-icon="call">call</span>
+<div class="text-left">
+<p class="text-xs font-bold text-on-surface-variant uppercase">お電話でのお問い合わせ</p>
+<p class="text-2xl font-black">0120-XXX-XXXX</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-950 w-full py-16">
+<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-12">
+<div>
+<div class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-6">Ezo Kikaku Co., Ltd.</div>
+<p class="font-['Inter'] text-sm leading-relaxed text-slate-500 dark:text-slate-400 max-w-md">
+                    私たちは、土地のポテンシャルを最大限に引き出し、地域社会の利便性向上に貢献します。50年の歴史が証明する安心の管理体制。
+                </p>
+<div class="mt-8 flex gap-4">
+<a class="text-slate-500 hover:text-blue-600 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="public">public</span>
+</a>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div>
