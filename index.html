@@ -122,14 +122,8 @@ tailwind.config = {
 </header>
 
 <!-- ===== HERO ===== -->
-<section class="relative min-h-screen flex items-center overflow-hidden" style="background: linear-gradient(150deg, #e8faf8 0%, #f5fffe 50%, #ffffff 100%);">
-  <!-- P.svg illustration — right side, large, no card -->
-  <div class="absolute right-0 top-0 bottom-0 w-full md:w-3/5 pointer-events-none flex items-center justify-end">
-    <img src="./P.svg" alt="えぞ企画 駐車場" class="w-full h-full object-contain object-right"/>
-  </div>
-
-  <!-- Hero content -->
-  <div class="relative z-10 max-w-7xl mx-auto px-8 pt-28 pb-24 w-full">
+<section class="overflow-hidden" style="background: linear-gradient(150deg, #e8faf8 0%, #f5fffe 50%, #ffffff 100%);">
+  <div class="max-w-7xl mx-auto px-8 pt-28 pb-0 w-full">
     <div class="max-w-lg">
       <div class="inline-flex items-center gap-2 bg-white text-teal-700 text-xs font-bold px-4 py-2 rounded-full mb-8 border border-teal-200 shadow-sm">
         <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">verified</span>
@@ -142,15 +136,14 @@ tailwind.config = {
         50年以上培ってきたノウハウで、あなたの土地に新しい価値を。<br/>
         えぞ企画は、地主様に寄り添う不動産の頼れるパートナーです。
       </p>
-      <div class="flex flex-col sm:flex-row gap-4">
-        <a href="#contact" class="inline-flex items-center justify-center gap-2 btn-grad px-8 py-4 rounded-full font-bold text-sm shadow-lg">
-          まずはお気軽にお問い合わせください
-          <span class="material-symbols-outlined text-lg">arrow_forward</span>
-        </a>
-        <a href="#point" class="inline-flex items-center justify-center gap-2 bg-white border border-teal-200 text-teal-600 px-8 py-4 rounded-full font-bold text-sm hover:bg-teal-50 transition-colors">
-          サービス詳細を見る
-        </a>
-      </div>
+      <a href="#contact" class="inline-flex items-center justify-center gap-2 btn-grad w-full sm:w-auto px-8 py-4 rounded-full font-bold text-sm shadow-lg mb-10">
+        まずはお気軽にお問い合わせください
+        <span class="material-symbols-outlined text-lg">arrow_forward</span>
+      </a>
+    </div>
+    <!-- P.svg illustration — below button, full width -->
+    <div class="w-full">
+      <img src="./P.svg" alt="えぞ企画 駐車場" class="w-full max-w-2xl mx-auto lg:max-w-none lg:ml-0 block"/>
     </div>
   </div>
 </section>
