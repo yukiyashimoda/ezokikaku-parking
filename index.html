@@ -122,8 +122,12 @@ tailwind.config = {
 </header>
 
 <!-- ===== HERO ===== -->
-<section class="overflow-hidden" style="background: linear-gradient(150deg, #e8faf8 0%, #f5fffe 50%, #ffffff 100%);">
-  <div class="max-w-7xl mx-auto px-8 pt-28 pb-0 w-full">
+<section class="overflow-hidden relative" style="background: linear-gradient(150deg, #e8faf8 0%, #f5fffe 60%, #ffffff 100%);">
+  <!-- Background image -->
+  <div class="absolute inset-0 pointer-events-none">
+    <img src="./hero-bg.jpg" alt="" class="w-full h-full object-cover opacity-30"/>
+  </div>
+  <div class="relative z-10 max-w-7xl mx-auto px-8 pt-28 pb-0 w-full">
     <div class="max-w-lg">
       <div class="inline-flex items-center gap-2 bg-white text-teal-700 text-xs font-bold px-4 py-2 rounded-full mb-8 border border-teal-200 shadow-sm">
         <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">verified</span>
@@ -147,6 +151,7 @@ tailwind.config = {
     </div>
   </div>
 </section>
+
 
 <!-- ===== PAIN POINTS ===== -->
 <section class="py-20 bg-gray-50">
