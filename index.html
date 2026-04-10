@@ -1,553 +1,507 @@
 <!DOCTYPE html>
-
-<html lang="ja"><head>
+<html lang="ja">
+<head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>えぞ企画 | 駐車場運営・土地活用のエキスパート</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>株式会社えぞ企画 | 駐車場運営・土地活用のエキスパート</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@700;800&amp;family=Noto+Sans+JP:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "background": "#f4fbfa",
-                        "tertiary-fixed-dim": "#5ddac8",
-                        "secondary-fixed-dim": "#55d8e5",
-                        "on-tertiary": "#ffffff",
-                        "surface-container-low": "#eef5f4",
-                        "secondary-fixed": "#85f3ff",
-                        "on-tertiary-container": "#f2fffb",
-                        "on-background": "#161d1d",
-                        "surface-container-lowest": "#ffffff",
-                        "on-primary-fixed-variant": "#003ea8",
-                        "surface-container-high": "#e2eae9",
-                        "inverse-primary": "#b4c5ff",
-                        "on-secondary-container": "#006d76",
-                        "on-primary-container": "#fdfbff",
-                        "on-error": "#ffffff",
-                        "secondary": "#006971",
-                        "inverse-on-surface": "#ebf2f1",
-                        "primary": "#1752cc",
-                        "tertiary-fixed": "#7cf7e4",
-                        "on-surface": "#161d1d",
-                        "error": "#ba1a1a",
-                        "outline-variant": "#c3c6d6",
-                        "surface-tint": "#1d55cf",
-                        "surface-container-highest": "#dde4e3",
-                        "on-secondary-fixed-variant": "#004f55",
-                        "on-secondary-fixed": "#002023",
-                        "surface": "#f4fbfa",
-                        "on-surface-variant": "#434654",
-                        "on-error-container": "#93000a",
-                        "primary-fixed-dim": "#b4c5ff",
-                        "surface-dim": "#d4dbdb",
-                        "tertiary-container": "#008376",
-                        "error-container": "#ffdad6",
-                        "on-primary-fixed": "#00174b",
-                        "on-secondary": "#ffffff",
-                        "surface-container": "#e8efee",
-                        "surface-variant": "#dde4e3",
-                        "surface-bright": "#f4fbfa",
-                        "outline": "#737685",
-                        "primary-fixed": "#dbe1ff",
-                        "primary-container": "#3c6ce6",
-                        "on-tertiary-fixed-variant": "#005048",
-                        "on-primary": "#ffffff",
-                        "tertiary": "#00685d",
-                        "on-tertiary-fixed": "#00201c",
-                        "secondary-container": "#73f2ff",
-                        "inverse-surface": "#2b3231"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.5rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "2xl": "1rem",
-                        "3xl": "1.5rem",
-                        "full": "9999px"
-                    },
-                    "fontFamily": {
-                        "headline": ["Manrope", "Noto Sans JP"],
-                        "body": ["Inter", "Noto Sans JP"],
-                        "label": ["Inter", "Noto Sans JP"]
-                    }
-                },
-            },
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        teal: {
+          50:  '#f0fffe',
+          100: '#ccfbf8',
+          200: '#99f5ef',
+          300: '#5de0d6',
+          400: '#2bc4b8',
+          500: '#00a896',
+          600: '#007e6e',
+          700: '#005f53',
+          800: '#004a41',
+          900: '#003530',
         }
-    </script>
+      }
+    }
+  }
+}
+</script>
 <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        body { font-family: 'Inter', 'Noto Sans JP', sans-serif; }
-        h1, h2, h3 { font-family: 'Manrope', 'Noto Sans JP', sans-serif; }
-        .faq-item[open] .material-symbols-outlined {
-            transform: rotate(180deg);
-        }
-        .speech-bubble {
-            position: relative;
-            background: #ffffff;
-            border-radius: 1.5rem;
-            padding: 1.5rem;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-        }
-        .speech-bubble::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            border-width: 10px 10px 0;
-            border-style: solid;
-            border-color: #ffffff transparent transparent;
-        }
-    </style>
-</head>
-<body class="bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container">
-<!-- TopNavBar -->
-<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-[0_12px_32px_-4px_rgba(22,29,29,0.06)]">
-<div class="flex justify-between items-center max-w-7xl mx-auto px-8 py-4">
-<div class="text-2xl font-black text-blue-800 dark:text-blue-200 tracking-tighter font-['Manrope']">
-                Ezo Kikaku
-            </div>
-<div class="hidden md:flex items-center gap-8">
-<a class="text-blue-700 dark:text-blue-400 border-b-2 border-blue-700 dark:border-blue-400 pb-1 font-bold tracking-tight" href="#">企業理念</a>
-<a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors font-bold tracking-tight" href="#">サービス内容</a>
-<a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors font-bold tracking-tight" href="#">実績と信頼</a>
-<a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors font-bold tracking-tight" href="#">お問い合わせ</a>
-<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-8 py-3 rounded-md font-bold scale-95 active:scale-90 transition-transform shadow-lg">
-                    無料相談
-                </button>
-</div>
-<button class="md:hidden p-2 text-on-surface">
-<span class="material-symbols-outlined" data-icon="menu">menu</span>
-</button>
-</div>
-</nav>
-<main class="pt-24">
-<!-- Hero Section -->
-<section class="relative min-h-[921px] flex items-center overflow-hidden bg-surface">
-<!-- SVG Background -->
-<div class="absolute bottom-0 right-0 w-full lg:w-3/5 h-full pointer-events-none">
-<img alt="えぞ企画 駐車場" class="w-full h-full object-contain object-bottom-right" src="./P.svg"/>
-</div>
-<div class="max-w-7xl mx-auto px-8 relative z-10">
-<div class="lg:col-span-7">
-<div class="inline-flex items-center px-4 py-2 bg-tertiary-container text-on-tertiary-container rounded-full text-sm font-bold mb-8 shadow-sm">
-<span class="material-symbols-outlined text-sm mr-2" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
-                        創業1967年・50年以上の信頼
-                    </div>
-<h1 class="text-5xl lg:text-7xl font-extrabold text-on-surface leading-[1.1] tracking-tighter mb-8">
-                        あなたの<br/>大切な土地、<br/>
-<span class="text-primary bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary-container">駐車場運営</span>で<br/>
-                        安定した収入源に<br/>しませんか？
-                    </h1>
-<p class="text-xl text-on-surface-variant leading-relaxed mb-10 max-w-2xl">
-                        50年以上培ってきたノウハウで、<br/>あなたの土地に新しい価値を。<br/>えぞ企画は、<br/>オーナー様に寄り添う<br/>不動産のパートナーです。
-                    </p>
-<div class="flex flex-col sm:flex-row gap-4">
-<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-10 py-5 rounded-xl font-bold text-lg shadow-xl hover:opacity-90 transition-all flex items-center justify-center">
-                            まずはお気軽にお問い合わせください
-                            <span class="material-symbols-outlined ml-2" data-icon="arrow_forward">arrow_forward</span>
-</button>
-<button class="bg-surface-container-highest text-primary px-10 py-5 rounded-xl font-bold text-lg hover:bg-surface-container-high transition-all flex items-center justify-center">
-                            サービス詳細を見る
-                        </button>
-</div>
-</div>
-</div>
-</section>
-<!-- Trust & History Section -->
-<section class="py-24 bg-surface-container-low">
-<div class="max-w-7xl mx-auto px-8">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-<div>
-<h2 class="text-3xl lg:text-4xl font-extrabold text-on-surface mb-6 leading-tight">
-                            創業1967年。<br/>
-                            半世紀を超える信頼と実績。
-                        </h2>
-<p class="text-lg text-on-surface-variant leading-relaxed mb-8">
-                            えぞ企画は、1967年の創業以来、北海道を中心に多くのオーナー様の土地活用をサポートしてまいりました。全日本不動産協会に所属し、透明性の高い誠実な運営を徹底しています。
-                        </p>
-<div class="grid grid-cols-2 gap-4">
-<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm">
-<span class="material-symbols-outlined text-primary mb-3 block" data-icon="account_balance">account_balance</span>
-<p class="text-sm font-bold text-on-surface">全日不動産協会所属</p>
-</div>
-<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm">
-<span class="material-symbols-outlined text-primary mb-3 block" data-icon="domain">domain</span>
-<p class="text-sm font-bold text-on-surface">多数の管理物件数</p>
-</div>
-</div>
-</div>
-<div class="grid grid-cols-2 gap-6">
-<div class="space-y-6 pt-12">
-<div class="bg-white p-2 rounded-2xl shadow-lg">
-<img alt="Office Building" class="rounded-xl object-cover h-48 w-full" data-alt="Modern glass skyscraper reflection with clear blue sky representing corporate stability and trust" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDK4BS4gbr_oEFIGTx2JM0fmrTcZRdGTkVg-z2aSo2VwQ6fhP2aVDD6AJ0oDvECI4nkidKKug6LaGVoBOFD89X6qaukchWWF2M0mxpG3ekOgF1WCELMlWMJG0h0Nhm6tPzaAjxJYVDtM2HjWgbKToXNShlOBourSepjEy70HXKKOEpRB4NnPVRK_fMsNLeI02DNM8_Yhdlgxy-4bcrUYTwITINMqrP6ut-qENaX1vjx9iLxWAVu9h53ZNZ2mpHfyWjaxsvfs9un5WQ"/>
-</div>
-<div class="bg-white p-2 rounded-2xl shadow-lg">
-<img alt="Consultation" class="rounded-xl object-cover h-64 w-full" data-alt="Close-up of professional business hands reviewing real estate blueprints on a clean desk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiKEDOgdylUQ9JVnpt6oQCrpFJR3kokMyLCpJPKGBfHtdWTuym3HU-i_Z0eJu9qsnLl_vn-CCDHVs-wm8dGZFj_pNusbsOxZo5H6-MfgWmPnFPR8zid_v7HLEerc0Jq2zlJaMbuZUYKsWVhpHGugNLrk6aqAAX6yfdp3hMzEEj1GXi0sTHziZGF3pu63f-glEOAVQAHHedioeAwpVRO0y7RI6xSGaZkB4e8lYQ12eUymJobMqh5mVDn7TICx1iJLk9WCuanDDzK6w"/>
-</div>
-</div>
-<div class="space-y-6">
-<div class="bg-white p-2 rounded-2xl shadow-lg">
-<img alt="Parking" class="rounded-xl object-cover h-64 w-full" data-alt="High-angle shot of a meticulously clean and well-lit parking garage with bright floor markings" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBA1mh_rnDZBslbRoaNF3eESYP3DO4o6RJNfAit7CaFudEpzUgOd6oznIbTFTvIciq6-mA_vPNKSQUhW45H31Bk_KB2MFJ4ukEhoVb8B-u5gSplYHVeMUu_2ZXY9HjZGflXTn3sBdOb_j3IMwT1_OiT5iRqCPpShrbFeqBIYJX9T98KIGZK_4BgVrUCK63BvwPJMHD9co1f4_y4blLTxqDjO-vO5uX4VrabPbMSDc37fzK_KicyLCTR6y2p8tcIwba0H3HyF6U4XKE"/>
-</div>
-<div class="bg-white p-2 rounded-2xl shadow-lg">
-<img alt="Team" class="rounded-xl object-cover h-48 w-full" data-alt="Professional office interior with collaborative team environment and bright airy atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD83LeDS1koASrM1PjPBVvMbgG08V8PD-2_i8jzc4qEEx7BWzTjqcsIVBZBCMm0taeQPabsuyxCNt1mi0-59WFy2F790p1RkXsNmK5KiKLYQWmMn5FqncX2Wj9hrqEVdDcNXECFi6gOUPtzB5oF4_-VBrpxu5ZLA0nkctNfs7odCIG26yeG6P6c_g38Z1JIlmpkads9TycxJWhLo1-v-zT8DGHSAjk4Pxo8ECrE7qdi_f6_ZOnGYm76gAIOMq5dHYUH99e5T3NDknw"/>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Service Benefits - Bento Grid -->
-<section class="py-24 bg-surface">
-<div class="max-w-7xl mx-auto px-8">
-<div class="text-center mb-16">
-<h2 class="text-4xl font-extrabold text-on-surface mb-4">選ばれる4つの理由</h2>
-<p class="text-on-surface-variant max-w-2xl mx-auto">オーナー様の負担を最小限に、収益を最大化するためのご提案をいたします。</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-<!-- Large Feature -->
-<div class="md:col-span-2 bg-surface-container-lowest p-10 rounded-3xl shadow-sm border border-outline-variant/10 hover:shadow-xl transition-all group">
-<div class="flex flex-col md:flex-row gap-8 items-center">
-<div class="flex-1">
-<div class="w-14 h-14 bg-primary/10 text-primary rounded-2xl flex items-center justify-center mb-6">
-<span class="material-symbols-outlined text-3xl" data-icon="payments" style="font-variation-settings: 'FILL' 1;">user-group</span>
-</div>
-<h3 class="text-2xl font-bold text-on-surface mb-4">北国ならではのサポート</h3>
-<p class="text-on-surface-variant leading-relaxed">
-                                    弊社にて管理でお預かりした土地は、夏は草刈り、冬は除雪を行っております。
-                                </p>
-</div>
-<div class="flex-1 w-full h-48 bg-surface-container-high rounded-2xl overflow-hidden">
-<img alt="Income stability" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Close-up of a tablet showing growth charts and financial data in a professional setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4M3sIqGx58iq0nkOzc3XchXqyKJ4AWlLFtHrxoQiyh0HJUaFnN9JBigj9lCwl3z6Prn7dtX3ZNUGqjkHMuD8kR6SLqTZZWk1x0eBJR81h9RNzqJjnVXDQzpZFelbRsyOaOVVFFRkX3YFbaTzeHDCv7qc_wyWlNpaOMM8kRjkpp_opy5uXk52xiy_N2M_AciXJekgw8dx4BGtKttF_m9fXPII5DFyaKT98J6Rr3tqnEYF6tziCAACgRBhSJG8KNS2_dR2RmxSWy-o"/>
-</div>
-</div>
-</div>
-<!-- Small Feature -->
-<div class="bg-surface-container-lowest p-10 rounded-3xl shadow-sm border border-outline-variant/10 hover:shadow-xl transition-all text-center">
-<div class="w-14 h-14 bg-secondary/10 text-secondary rounded-2xl flex items-center justify-center mb-6 mx-auto">
-<span class="material-symbols-outlined text-3xl" data-icon="price_check">price_check</span>
-</div>
-<h3 class="text-xl font-bold text-on-surface mb-4">豊富な実績からくる柔軟な対応</h3>
-<p class="text-on-surface-variant text-sm leading-relaxed">
-                            複数名義でご所有の土地、売却までの一時的な利用など、あらゆる条件に合わせて最適な運営を行います。
-                        </p>
-</div>
-<!-- Small Feature -->
-<div class="bg-surface-container-lowest p-10 rounded-3xl shadow-sm border border-outline-variant/10 hover:shadow-xl transition-all text-center">
-<div class="w-14 h-14 bg-tertiary/10 text-tertiary rounded-2xl flex items-center justify-center mb-6 mx-auto">
-<span class="material-symbols-outlined text-3xl" data-icon="support_agent">support_agent</span>
-</div>
-<h3 class="text-xl font-bold text-on-surface mb-4">安心の契約</h3>
-<p class="text-on-surface-variant text-sm leading-relaxed">
-                            もし、土地を別の用途で使いたい、売却したい場合でも安心。2ヶ月前にお知らせいただければ、契約はいつでも解除可能です。
-                        </p>
-</div>
-<!-- Medium Feature -->
-<div class="md:col-span-2 bg-gradient-to-br from-primary to-primary-container p-10 rounded-3xl shadow-lg text-on-primary">
-<div class="flex flex-col md:flex-row gap-8 items-center h-full">
-<div class="flex-1">
-<h3 class="text-2xl font-bold mb-4">柔軟な土地活用提案</h3>
-<p class="opacity-90 leading-relaxed">
-                                    狭小地、変形地、将来の建設計画がある土地など、あらゆる条件に合わせて最適な運営方法をご提案いたします。
-                                </p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Pain Points Section -->
-<section class="py-24 bg-gradient-to-b from-surface to-secondary-container/10">
-<div class="max-w-7xl mx-auto px-8">
-<div class="text-center mb-16">
-<h2 class="text-4xl font-extrabold text-on-surface mb-4">こんなお悩みありませんか？</h2>
-<div class="h-1 w-20 bg-primary mx-auto rounded-full mb-8"></div>
-</div>
-<div class="relative bg-white/40 rounded-[3rem] p-12 md:p-20 overflow-hidden border border-white/60 shadow-inner">
-<div class="absolute inset-0 z-0 opacity-20 pointer-events-none flex items-end justify-center">
-<span class="material-symbols-outlined text-[300px] text-primary/20" data-icon="groups">groups</span>
-</div>
-<div class="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-12">
-<div class="speech-bubble group hover:-translate-y-2 transition-transform duration-300">
-<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto">
-<span class="material-symbols-outlined text-2xl text-primary" data-icon="payments">payments</span>
-</div>
-<p class="text-lg font-bold text-on-surface text-center leading-snug">
-                                土地が空いたまま、<br/>
-                                固定資産税だけ払っている...
-                            </p>
-</div>
-<div class="speech-bubble group hover:-translate-y-2 transition-transform duration-300 md:translate-y-12">
-<div class="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mb-4 mx-auto">
-<span class="material-symbols-outlined text-2xl text-secondary" data-icon="potted_plant">potted_plant</span>
-</div>
-<p class="text-lg font-bold text-on-surface text-center leading-snug">
-                                管理が面倒で、不法投棄や<br/>
-                                雑草に悩んでいる...
-                            </p>
-</div>
-<div class="speech-bubble group hover:-translate-y-2 transition-transform duration-300">
-<div class="w-12 h-12 bg-tertiary/10 rounded-full flex items-center justify-center mb-4 mx-auto">
-<span class="material-symbols-outlined text-2xl text-tertiary" data-icon="architecture">architecture</span>
-</div>
-<p class="text-lg font-bold text-on-surface text-center leading-snug">
-                                狭小地や変形地で、<br/>
-                                活用方法が見つからない...
-                            </p>
-</div>
-</div>
-<div class="mt-24 text-center relative z-10">
-<p class="text-2xl font-black text-primary inline-block px-10 py-5 bg-white rounded-full shadow-xl border border-primary/10">
-                            えぞ企画が、そのお悩みを解決いたします！
-                        </p>
-</div>
-</div>
-</div>
-</section>
-<!-- FAQ Section -->
-<section class="py-24 bg-surface-container-low">
-<div class="max-w-4xl mx-auto px-8">
-<div class="text-center mb-16">
-<h2 class="text-4xl font-extrabold text-on-surface mb-4">よくあるご質問</h2>
-<p class="text-on-surface-variant">地主様から多く寄せられるご質問にお答えします。</p>
-</div>
-<div class="space-y-4">
-<details class="faq-item group bg-surface-container-lowest rounded-2xl border border-outline-variant/50 overflow-hidden shadow-sm transition-all hover:shadow-md">
-<summary class="flex justify-between items-center p-6 cursor-pointer list-none font-bold text-on-surface">
-<div class="flex items-center">
-<span class="text-primary mr-4 text-xl font-black">Q</span>
-<span>初期費用は本当に0円ですか？</span>
-</div>
-<span class="material-symbols-outlined text-on-surface-variant transition-transform duration-300" data-icon="expand_more">expand_more</span>
-</summary>
-<div class="px-6 pb-6 pt-0 border-t border-outline-variant/10">
-<div class="flex mt-4">
-<span class="text-secondary mr-4 text-xl font-black shrink-0">A</span>
-<p class="text-on-surface-variant leading-relaxed">
-                                    はい、機器の設置から工事まで弊社が負担するため、オーナー様の持ち出しは一切ございません。
-                                </p>
-</div>
-</div>
-</details>
-<details class="faq-item group bg-surface-container-lowest rounded-2xl border border-outline-variant/50 overflow-hidden shadow-sm transition-all hover:shadow-md">
-<summary class="flex justify-between items-center p-6 cursor-pointer list-none font-bold text-on-surface">
-<div class="flex items-center">
-<span class="text-primary mr-4 text-xl font-black">Q</span>
-<span>狭い土地や変形した土地でも大丈夫ですか？</span>
-</div>
-<span class="material-symbols-outlined text-on-surface-variant transition-transform duration-300" data-icon="expand_more">expand_more</span>
-</summary>
-<div class="px-6 pb-6 pt-0 border-t border-outline-variant/10">
-<div class="flex mt-4">
-<span class="text-secondary mr-4 text-xl font-black shrink-0">A</span>
-<p class="text-on-surface-variant leading-relaxed">
-                                    もちろんです。1台分のスペースから、土地の形状に合わせた最適なレイアウトをご提案いたします。
-                                </p>
-</div>
-</div>
-</details>
-<details class="faq-item group bg-surface-container-lowest rounded-2xl border border-outline-variant/50 overflow-hidden shadow-sm transition-all hover:shadow-md">
-<summary class="flex justify-between items-center p-6 cursor-pointer list-none font-bold text-on-surface">
-<div class="flex items-center">
-<span class="text-primary mr-4 text-xl font-black">Q</span>
-<span>契約期間はどのくらいですか？</span>
-</div>
-<span class="material-symbols-outlined text-on-surface-variant transition-transform duration-300" data-icon="expand_more">expand_more</span>
-</summary>
-<div class="px-6 pb-6 pt-0 border-t border-outline-variant/10">
-<div class="flex mt-4">
-<span class="text-secondary mr-4 text-xl font-black shrink-0">A</span>
-<p class="text-on-surface-variant leading-relaxed">
-                                    基本的には短期から長期まで柔軟に対応可能です。詳細はお打ち合わせにてご説明いたします。
-                                </p>
-</div>
-</div>
-</details>
-</div>
-</div>
-</section>
-<!-- Philosophy Section -->
-<section class="py-32 relative overflow-hidden bg-inverse-surface text-inverse-on-surface">
-<div class="max-w-7xl mx-auto px-8 relative z-10 text-center">
-<span class="text-primary-container font-bold tracking-widest text-sm uppercase mb-4 block">企業理念</span>
-<blockquote class="text-3xl md:text-5xl font-extrabold leading-tight mb-12 max-w-4xl mx-auto italic">
-                    「土地は、人生の中でも特に貴重な財産。<br/>
-                    だからこそ信頼できるパートナーにお任せいただきたい。」
-                </blockquote>
-<p class="text-xl font-bold text-primary-container mb-8">あなたの土地に新しい価値を。駐車場運営はえぞ企画。</p>
-<div class="h-1 w-24 bg-primary mx-auto rounded-full"></div>
-</div>
-<div class="absolute inset-0 opacity-10">
-<img alt="Architectural texture" class="w-full h-full object-cover" data-alt="Macro texture of smooth gray concrete with minimalist architectural lines and deep shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5Fu16Bgpd7zWSeerTo48vurwNCa62IQ9aiyD5_-H5sEmZlrn3uJhZdG0be0H5Hqww4kNYgM0HOkKq4jFfmW5MecBUawZLWecKl2IVBHSP6XhquOOdo9_VDaSeOJny1D7LgB_lhyT0WACSFYXEkneDjZJm2bfCjCa5ItxLL0SXwJPX7NLWUuU7ZCb10t_YzClC8X8EoOZA0SfHfnoydyy3SNlw-Y_UM7qRQgzRfnIDIrh6v6P0m-09XOLibo8b3zoIvNaw_oJzPds"/>
-</div>
-</section>
-<!-- Company Profile Section -->
-<section class="py-24 bg-surface-container-high/50">
-<div class="max-w-4xl mx-auto px-8">
-<div class="text-center mb-12">
-<h2 class="text-3xl font-extrabold text-on-surface mb-2">会社概要</h2>
-<div class="h-1 w-12 bg-primary mx-auto rounded-full"></div>
-<p class="mt-4 text-on-surface-variant font-medium uppercase tracking-widest text-xs">会社情報</p>
-</div>
-<div class="bg-surface-container-lowest rounded-3xl p-8 md:p-12 shadow-sm">
-<dl class="space-y-6">
-<div class="flex flex-col md:flex-row md:items-center border-b border-outline-variant/30 pb-6">
-<dt class="md:w-1/3 font-bold text-on-surface-variant mb-2 md:mb-0">会社名</dt>
-<dd class="md:w-2/3 text-on-surface font-bold text-lg">株式会社えぞ企画</dd>
-</div>
-<div class="flex flex-col md:flex-row md:items-center border-b border-outline-variant/30 pb-6">
-<dt class="md:w-1/3 font-bold text-on-surface-variant mb-2 md:mb-0">代表取締役</dt>
-<dd class="md:w-2/3 text-on-surface">安田 晶代</dd>
-</div>
-<div class="flex flex-col md:flex-row md:items-center border-b border-outline-variant/30 pb-6">
-<dt class="md:w-1/3 font-bold text-on-surface-variant mb-2 md:mb-0">本社所在地</dt>
-<dd class="md:w-2/3 text-on-surface">北海道札幌市中央区南7条西2丁目1番地3</dd>
-</div>
-<div class="flex flex-col md:flex-row md:items-center border-b border-outline-variant/30 pb-6">
-<dt class="md:w-1/3 font-bold text-on-surface-variant mb-2 md:mb-0">電話</dt>
-<dd class="md:w-2/3 text-on-surface">011-512-5351</dd>
-</div>
-<div class="flex flex-col md:flex-row md:items-center border-b border-outline-variant/30 pb-6">
-<dt class="md:w-1/3 font-bold text-on-surface-variant mb-2 md:mb-0">設立年月日</dt>
-<dd class="md:w-2/3 text-on-surface">昭和42年(1967年)4月1日</dd>
-</div>
-<div class="flex flex-col md:flex-row md:items-center border-b border-outline-variant/30 pb-6">
-<dt class="md:w-1/3 font-bold text-on-surface-variant mb-2 md:mb-0">資本金</dt>
-<dd class="md:w-2/3 text-on-surface">¥20,000,000-</dd>
-</div>
-<div class="flex flex-col md:flex-row md:items-center border-b border-outline-variant/30 pb-6">
-<dt class="md:w-1/3 font-bold text-on-surface-variant mb-2 md:mb-0">従業員数</dt>
-<dd class="md:w-2/3 text-on-surface">30名</dd>
-</div>
-<div class="flex flex-col md:flex-row md:items-center border-b border-outline-variant/30 pb-6">
-<dt class="md:w-1/3 font-bold text-on-surface-variant mb-2 md:mb-0">事業内容</dt>
-<dd class="md:w-2/3 text-on-surface">・店舗・オフィス設計施工</br>・住宅リフォーム事業</br>・パーキング事業</br>・コミュニケーション事業
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  body { font-family: 'Noto Sans JP', sans-serif; }
 
-</dd>
-</div>
-<div class="flex flex-col md:flex-row md:items-center">
-<dt class="md:w-1/3 font-bold text-on-surface-variant mb-2 md:mb-0">免許・所属</dt>
-<dd class="md:w-2/3 text-on-surface">全日不動産協会所属</dd>
-</div>
-</dl>
-</div>
-</div>
+  /* Section label style (N-LOUPE style) */
+  .sec-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #00a896;
+    margin-bottom: 0.5rem;
+  }
+  .sec-tag::before {
+    content: '';
+    display: block;
+    width: 1.5rem;
+    height: 2px;
+    background: #00a896;
+    flex-shrink: 0;
+  }
+  .sec-tag-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #00a896;
+    margin-bottom: 0.5rem;
+  }
+  .sec-tag-center::before,
+  .sec-tag-center::after {
+    content: '';
+    display: block;
+    width: 1.5rem;
+    height: 2px;
+    background: #00a896;
+    flex-shrink: 0;
+  }
+
+  /* FAQ open state */
+  .faq-item[open] .faq-icon {
+    transform: rotate(180deg);
+  }
+  .faq-icon {
+    transition: transform 0.3s;
+  }
+</style>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+<!-- ===== HEADER ===== -->
+<header class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm">
+  <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between gap-4">
+    <div class="flex items-center gap-3 shrink-0">
+      <div class="text-xl font-black text-teal-600 tracking-tight">えぞ企画</div>
+      <span class="hidden sm:block text-xs text-gray-400 border-l border-gray-200 pl-3 leading-tight">
+        駐車場運営・土地活用
+      </span>
+    </div>
+    <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-gray-600">
+      <a href="#point" class="hover:text-teal-600 transition-colors">選ばれる理由</a>
+      <a href="#service" class="hover:text-teal-600 transition-colors">サービス内容</a>
+      <a href="#flow" class="hover:text-teal-600 transition-colors">契約の流れ</a>
+      <a href="#faq" class="hover:text-teal-600 transition-colors">よくある質問</a>
+      <a href="#company" class="hover:text-teal-600 transition-colors">会社概要</a>
+    </nav>
+    <a href="#contact" class="shrink-0 bg-teal-500 hover:bg-teal-600 text-white px-5 py-2.5 rounded-full text-sm font-bold transition-colors shadow">
+      お問い合わせ
+    </a>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="relative min-h-screen flex items-center overflow-hidden" style="background: linear-gradient(150deg, #e8faf8 0%, #f5fffe 50%, #ffffff 100%);">
+  <!-- P.svg illustration — right side, large, no card -->
+  <div class="absolute right-0 top-0 bottom-0 w-full md:w-3/5 pointer-events-none flex items-center justify-end">
+    <img src="./P.svg" alt="えぞ企画 駐車場" class="w-full h-full object-contain object-right"/>
+  </div>
+
+  <!-- Hero content -->
+  <div class="relative z-10 max-w-7xl mx-auto px-8 pt-28 pb-24 w-full">
+    <div class="max-w-lg">
+      <div class="inline-flex items-center gap-2 bg-white text-teal-700 text-xs font-bold px-4 py-2 rounded-full mb-8 border border-teal-200 shadow-sm">
+        <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">verified</span>
+        創業1967年・50年以上の信頼
+      </div>
+      <h1 class="text-4xl lg:text-6xl font-black text-gray-900 mb-8" style="line-height:1.2">
+        あなたの<br/>大切な土地を、<br/><span class="text-teal-500">駐車場運営</span>で<br/>安定した収入源に。
+      </h1>
+      <p class="text-base text-gray-500 leading-relaxed mb-10">
+        50年以上培ってきたノウハウで、あなたの土地に新しい価値を。<br/>
+        えぞ企画は、地主様に寄り添う不動産の頼れるパートナーです。
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="#contact" class="inline-flex items-center justify-center gap-2 bg-teal-500 hover:bg-teal-600 text-white px-8 py-4 rounded-full font-bold text-sm shadow-lg transition-all">
+          まずはお気軽にお問い合わせください
+          <span class="material-symbols-outlined text-lg">arrow_forward</span>
+        </a>
+        <a href="#point" class="inline-flex items-center justify-center gap-2 bg-white border border-teal-200 text-teal-600 px-8 py-4 rounded-full font-bold text-sm hover:bg-teal-50 transition-colors">
+          サービス詳細を見る
+        </a>
+      </div>
+    </div>
+  </div>
 </section>
-<!-- Flow Section -->
-<section class="py-24 bg-surface">
-<div class="max-w-7xl mx-auto px-8">
-<div class="text-center mb-16">
-<h2 class="text-4xl font-extrabold text-on-surface mb-4">契約までの流れ</h2>
-<p class="text-on-surface-variant">地主様のペースに合わせて安定した収益化を実現します。</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-4 gap-4 relative">
-<!-- Step 1 -->
-<div class="relative flex flex-col items-center p-8 bg-surface-container-low rounded-2xl group hover:bg-surface-container-high transition-colors">
-<div class="w-12 h-12 bg-primary text-on-primary rounded-full flex items-center justify-center font-bold text-xl mb-6 shadow-lg z-10">1</div>
-<h3 class="text-lg font-bold text-on-surface mb-3">お問い合わせ</h3>
-<p class="text-sm text-on-surface-variant text-center">WEBまたはお電話にて、お気軽にご相談ください。</p>
-<div class="hidden md:block absolute top-14 left-full w-full h-[2px] bg-outline-variant/30 -z-0"></div>
-</div>
-<!-- Step 2 -->
-<div class="relative flex flex-col items-center p-8 bg-surface-container-low rounded-2xl group hover:bg-surface-container-high transition-colors">
-<div class="w-12 h-12 bg-primary text-on-primary rounded-full flex items-center justify-center font-bold text-xl mb-6 shadow-lg z-10">2</div>
-<h3 class="text-lg font-bold text-on-surface mb-3">現地調査・査定</h3>
-<p class="text-sm text-on-surface-variant text-center">専門スタッフが土地の立地や需要を調査いたします。</p>
-<div class="hidden md:block absolute top-14 left-full w-full h-[2px] bg-outline-variant/30 -z-0"></div>
-</div>
-<!-- Step 3 -->
-<div class="relative flex flex-col items-center p-8 bg-surface-container-low rounded-2xl group hover:bg-surface-container-high transition-colors">
-<div class="w-12 h-12 bg-primary text-on-primary rounded-full flex items-center justify-center font-bold text-xl mb-6 shadow-lg z-10">3</div>
-<h3 class="text-lg font-bold text-on-surface mb-3">ご提案・お見積り</h3>
-<p class="text-sm text-on-surface-variant text-center">最適な土地活用、収益プランをご提案いたします。</p>
-<div class="hidden md:block absolute top-14 left-full w-full h-[2px] bg-outline-variant/30 -z-0"></div>
-</div>
-<!-- Step 4 -->
-<div class="relative flex flex-col items-center p-8 bg-surface-container-low rounded-2xl group hover:bg-surface-container-high transition-colors">
-<div class="w-12 h-12 bg-primary text-on-primary rounded-full flex items-center justify-center font-bold text-xl mb-6 shadow-lg z-10">4</div>
-<h3 class="text-lg font-bold text-on-surface mb-3">ご契約・運営開始</h3>
-<p class="text-sm text-on-surface-variant text-center">内容にご納得いただけましたら、署名、捺印いただきご契約となります。(郵送・弊社事務所・ご自宅にて)</p>
-</div>
-<div class="w-12 h-12 bg-primary text-on-primary rounded-full flex items-center justify-center font-bold text-xl mb-6 shadow-lg z-10">5</div>
-<h3 class="text-lg font-bold text-on-surface mb-3">地代収入</h3>
-<p class="text-sm text-on-surface-variant text-center">３ヶ月毎に入庫状況・精算・報告書を送付いたします。
-</p>
-</div>
-</div>
-</div>
+
+<!-- ===== PAIN POINTS ===== -->
+<section class="py-20 bg-gray-50">
+  <div class="max-w-5xl mx-auto px-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+        <div class="text-7xl font-black leading-none text-teal-100 mb-2 select-none">"</div>
+        <p class="text-base font-bold text-gray-800 leading-relaxed">
+          土地が空いたまま、<br/>固定資産税だけ払っている...
+        </p>
+      </div>
+      <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+        <div class="text-7xl font-black leading-none text-teal-100 mb-2 select-none">"</div>
+        <p class="text-base font-bold text-gray-800 leading-relaxed">
+          管理が面倒で、不法投棄や<br/>雑草に悩んでいる...
+        </p>
+      </div>
+      <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+        <div class="text-7xl font-black leading-none text-teal-100 mb-2 select-none">"</div>
+        <p class="text-base font-bold text-gray-800 leading-relaxed">
+          狭小地や変形地で、<br/>活用方法が見つからない...
+        </p>
+      </div>
+    </div>
+  </div>
 </section>
-<!-- Contact/CTA Footer -->
-<section class="py-24 bg-surface">
-<div class="max-w-4xl mx-auto px-8">
-<div class="bg-surface-container-lowest p-12 rounded-[2.5rem] shadow-2xl relative overflow-hidden">
-<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16"></div>
-<div class="relative z-10 text-center">
-<h2 class="text-3xl font-extrabold text-on-surface mb-6">まずはお気軽にご相談ください</h2>
-<p class="text-on-surface-variant mb-10">
-                            弊社スタッフが現地を調査し、土地活用、収益プランをご提案いたします。<br/>
-                            無理な勧誘は一切ございませんのでご安心ください。
-                        </p>
-<div class="flex flex-col items-center gap-6">
-<button class="w-full sm:w-auto bg-primary text-on-primary px-12 py-5 rounded-2xl font-bold text-xl shadow-xl hover:scale-105 transition-transform flex items-center justify-center">
-<span class="material-symbols-outlined mr-3" data-icon="mail">mail</span>
-                                お問い合わせはこちら
-                            </button>
-<div class="flex items-center gap-4 text-primary">
-<span class="material-symbols-outlined text-4xl" data-icon="call">call</span>
-<div class="text-left">
-<p class="text-xs font-bold text-on-surface-variant uppercase">お電話でのお問い合わせ</p>
-<p class="text-2xl font-black">011-512-5351</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+
+<!-- ===== TAGLINE BANNER ===== -->
+<section class="py-10 bg-teal-500">
+  <div class="text-center px-8">
+    <p class="text-lg md:text-2xl font-black text-white tracking-wide">
+      えぞ企画は、そのお悩み、すべてに応えます！
+    </p>
+  </div>
 </section>
-</main>
-<!-- Footer -->
-<footer class="bg-slate-50 dark:bg-slate-950 w-full py-16">
-<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-12">
-<div>
-<div class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-6">株式会社えぞ企画</div>
-<p class="font-['Inter'] text-sm leading-relaxed text-slate-500 dark:text-slate-400 max-w-md">
-                    私たちは、土地のポテンシャルを最大限に引き出し、地域社会の利便性向上に貢献します。50年の歴史が証明する安心の管理体制。
-                </p>
-<div class="mt-8 flex gap-4">
-<a class="text-slate-500 hover:text-blue-600 transition-colors" href="#">
-<span class="material-symbols-outlined" data-icon="public">public</span>
-</a>
-</div>
-</div>
-<div class="grid grid-cols-2 gap-8">
-<div>
-<h4 class="font-bold text-on-surface mb-4">リンク</h4>
-<ul class="space-y-3 font-['Inter'] text-sm">
-<li><a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 transition-opacity" href="#">土地オーナー様向けFAQ</a></li>
-<li><a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 transition-opacity" href="#">会社概要</a></li>
-</ul>
-</div>
-<div>
-<h4 class="font-bold text-on-surface mb-4">法務規定</h4>
-<ul class="space-y-3 font-['Inter'] text-sm">
-<li><a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 transition-opacity" href="#">プライバシーポリシー</a></li>
-<li><a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 transition-opacity" href="#">利用規約</a></li>
-</ul>
-</div>
-</div>
-</div>
-<div class="max-w-7xl mx-auto px-8 mt-16 pt-8 border-t border-slate-200/50 dark:border-slate-800/50">
-<p class="font-['Inter'] text-sm leading-relaxed text-slate-500 dark:text-slate-400 text-center md:text-left">
-                © 2026 株式会社えぞ企画 All Rights Reserved. (公社)全日本不動産協会会員
-            </p>
-</div>
+
+<!-- ===== POINT ===== -->
+<section id="point" class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="mb-14">
+      <p class="sec-tag">POINT</p>
+      <h2 class="text-3xl font-black text-gray-900 mb-2">選ばれる理由</h2>
+      <p class="text-sm text-gray-500">地主様が安心して任せられる、えぞ企画の強みをご紹介します。</p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="p-8 rounded-2xl bg-teal-50 border border-teal-100">
+        <div class="w-12 h-12 bg-teal-500 rounded-xl flex items-center justify-center mb-6">
+          <span class="material-symbols-outlined text-white text-2xl" style="font-variation-settings: 'FILL' 1;">groups</span>
+        </div>
+        <h3 class="text-base font-bold text-gray-900 mb-3">北国ならではのサポート</h3>
+        <p class="text-sm text-gray-600 leading-relaxed">管理でお預かりした土地は、夏は草刈り、冬は除雪を行っております。</p>
+      </div>
+      <div class="p-8 rounded-2xl bg-white border border-gray-100 shadow-sm">
+        <div class="w-12 h-12 bg-teal-50 rounded-xl flex items-center justify-center mb-6">
+          <span class="material-symbols-outlined text-teal-500 text-2xl">price_check</span>
+        </div>
+        <h3 class="text-base font-bold text-gray-900 mb-3">豊富な実績と柔軟な対応</h3>
+        <p class="text-sm text-gray-600 leading-relaxed">複数名義の土地、売却までの一時利用など、あらゆる条件に最適な運営を行います。</p>
+      </div>
+      <div class="p-8 rounded-2xl bg-white border border-gray-100 shadow-sm">
+        <div class="w-12 h-12 bg-teal-50 rounded-xl flex items-center justify-center mb-6">
+          <span class="material-symbols-outlined text-teal-500 text-2xl">contract</span>
+        </div>
+        <h3 class="text-base font-bold text-gray-900 mb-3">安心の契約</h3>
+        <p class="text-sm text-gray-600 leading-relaxed">2ヶ月前にご連絡いただければ、契約はいつでも解除可能です。</p>
+      </div>
+      <div class="p-8 rounded-2xl bg-white border border-gray-100 shadow-sm">
+        <div class="w-12 h-12 bg-teal-50 rounded-xl flex items-center justify-center mb-6">
+          <span class="material-symbols-outlined text-teal-500 text-2xl">map</span>
+        </div>
+        <h3 class="text-base font-bold text-gray-900 mb-3">柔軟な土地活用提案</h3>
+        <p class="text-sm text-gray-600 leading-relaxed">狭小地、変形地など、あらゆる条件に合わせて最適な運営方法をご提案いたします。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICE ===== -->
+<section id="service" class="py-24 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="mb-14">
+      <p class="sec-tag">SERVICE</p>
+      <h2 class="text-3xl font-black text-gray-900 mb-2">サービス内容</h2>
+      <p class="text-sm text-gray-500">えぞ企画が提供する土地活用サービスをご紹介します。</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+        <div class="h-36 bg-teal-500 flex items-center justify-center">
+          <span class="material-symbols-outlined text-6xl text-white/80" style="font-variation-settings: 'FILL' 1;">local_parking</span>
+        </div>
+        <div class="p-7">
+          <h3 class="text-base font-bold text-gray-900 mb-3">月極駐車場</h3>
+          <p class="text-sm text-gray-600 leading-relaxed">安定した月額収入を実現。長期契約で収益の見通しが立てやすい運営方式です。</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+        <div class="h-36 bg-teal-600 flex items-center justify-center">
+          <span class="material-symbols-outlined text-6xl text-white/80" style="font-variation-settings: 'FILL' 1;">timer</span>
+        </div>
+        <div class="p-7">
+          <h3 class="text-base font-bold text-gray-900 mb-3">コインパーキング</h3>
+          <p class="text-sm text-gray-600 leading-relaxed">時間貸し駐車場で高稼働率を目指します。需要に応じた柔軟な料金設定が可能です。</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+        <div class="h-36 bg-teal-700 flex items-center justify-center">
+          <span class="material-symbols-outlined text-6xl text-white/80" style="font-variation-settings: 'FILL' 1;">handshake</span>
+        </div>
+        <div class="p-7">
+          <h3 class="text-base font-bold text-gray-900 mb-3">土地管理代行</h3>
+          <p class="text-sm text-gray-600 leading-relaxed">草刈り・除雪など、北国ならではの土地管理もすべてお任せください。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MID CTA BANNER ===== -->
+<section class="py-16 bg-gradient-to-r from-teal-600 to-teal-400">
+  <div class="max-w-5xl mx-auto px-8 flex flex-col md:flex-row items-center justify-between gap-8">
+    <div class="text-white text-center md:text-left">
+      <p class="text-xs font-bold uppercase tracking-widest text-white/70 mb-2">無料相談受付中</p>
+      <h2 class="text-2xl md:text-3xl font-black leading-snug">
+        あなたの土地の活用について<br/>ご相談ください
+      </h2>
+    </div>
+    <div class="flex flex-col items-center gap-3 shrink-0">
+      <a href="#contact" class="bg-white text-teal-600 hover:bg-teal-50 px-10 py-4 rounded-full font-black text-sm shadow-xl transition-all whitespace-nowrap">
+        お問い合わせはこちら
+      </a>
+      <a href="tel:0115125351" class="text-white/80 text-sm font-bold tracking-wide hover:text-white transition-colors">
+        ☎ 011-512-5351
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section id="faq" class="py-24 bg-white">
+  <div class="max-w-4xl mx-auto px-8">
+    <div class="mb-14">
+      <p class="sec-tag">FAQ</p>
+      <h2 class="text-3xl font-black text-gray-900 mb-2">よくあるご質問</h2>
+      <p class="text-sm text-gray-500">地主様から多く寄せられるご質問にお答えします。</p>
+    </div>
+    <div class="space-y-3">
+      <details class="faq-item group border border-gray-200 rounded-xl overflow-hidden">
+        <summary class="flex justify-between items-center px-6 py-5 cursor-pointer list-none bg-white hover:bg-gray-50 transition-colors">
+          <div class="flex items-center gap-4">
+            <span class="w-7 h-7 rounded-full bg-teal-500 text-white text-xs font-black flex items-center justify-center shrink-0">Q</span>
+            <span class="font-bold text-gray-800 text-sm">初期費用は本当に0円ですか？</span>
+          </div>
+          <span class="material-symbols-outlined faq-icon text-gray-400 shrink-0">expand_more</span>
+        </summary>
+        <div class="px-6 pb-5 pt-4 border-t border-gray-100 bg-gray-50">
+          <div class="flex gap-4">
+            <span class="w-7 h-7 rounded-full bg-gray-200 text-gray-600 text-xs font-black flex items-center justify-center shrink-0">A</span>
+            <p class="text-gray-600 leading-relaxed text-sm">はい、機器の設置から工事まで弊社が負担するため、オーナー様の持ち出しは一切ございません。</p>
+          </div>
+        </div>
+      </details>
+      <details class="faq-item group border border-gray-200 rounded-xl overflow-hidden">
+        <summary class="flex justify-between items-center px-6 py-5 cursor-pointer list-none bg-white hover:bg-gray-50 transition-colors">
+          <div class="flex items-center gap-4">
+            <span class="w-7 h-7 rounded-full bg-teal-500 text-white text-xs font-black flex items-center justify-center shrink-0">Q</span>
+            <span class="font-bold text-gray-800 text-sm">狭い土地や変形した土地でも大丈夫ですか？</span>
+          </div>
+          <span class="material-symbols-outlined faq-icon text-gray-400 shrink-0">expand_more</span>
+        </summary>
+        <div class="px-6 pb-5 pt-4 border-t border-gray-100 bg-gray-50">
+          <div class="flex gap-4">
+            <span class="w-7 h-7 rounded-full bg-gray-200 text-gray-600 text-xs font-black flex items-center justify-center shrink-0">A</span>
+            <p class="text-gray-600 leading-relaxed text-sm">もちろんです。1台分のスペースから、土地の形状に合わせた最適なレイアウトをご提案いたします。</p>
+          </div>
+        </div>
+      </details>
+      <details class="faq-item group border border-gray-200 rounded-xl overflow-hidden">
+        <summary class="flex justify-between items-center px-6 py-5 cursor-pointer list-none bg-white hover:bg-gray-50 transition-colors">
+          <div class="flex items-center gap-4">
+            <span class="w-7 h-7 rounded-full bg-teal-500 text-white text-xs font-black flex items-center justify-center shrink-0">Q</span>
+            <span class="font-bold text-gray-800 text-sm">契約期間はどのくらいですか？</span>
+          </div>
+          <span class="material-symbols-outlined faq-icon text-gray-400 shrink-0">expand_more</span>
+        </summary>
+        <div class="px-6 pb-5 pt-4 border-t border-gray-100 bg-gray-50">
+          <div class="flex gap-4">
+            <span class="w-7 h-7 rounded-full bg-gray-200 text-gray-600 text-xs font-black flex items-center justify-center shrink-0">A</span>
+            <p class="text-gray-600 leading-relaxed text-sm">基本的には短期から長期まで柔軟に対応可能です。詳細はお打ち合わせにてご説明いたします。</p>
+          </div>
+        </div>
+      </details>
+      <details class="faq-item group border border-gray-200 rounded-xl overflow-hidden">
+        <summary class="flex justify-between items-center px-6 py-5 cursor-pointer list-none bg-white hover:bg-gray-50 transition-colors">
+          <div class="flex items-center gap-4">
+            <span class="w-7 h-7 rounded-full bg-teal-500 text-white text-xs font-black flex items-center justify-center shrink-0">Q</span>
+            <span class="font-bold text-gray-800 text-sm">土地を返してほしい場合はどうなりますか？</span>
+          </div>
+          <span class="material-symbols-outlined faq-icon text-gray-400 shrink-0">expand_more</span>
+        </summary>
+        <div class="px-6 pb-5 pt-4 border-t border-gray-100 bg-gray-50">
+          <div class="flex gap-4">
+            <span class="w-7 h-7 rounded-full bg-gray-200 text-gray-600 text-xs font-black flex items-center justify-center shrink-0">A</span>
+            <p class="text-gray-600 leading-relaxed text-sm">売却や別用途でご利用の際も安心です。2ヶ月前にお知らせいただければ、契約はいつでも解除可能です。</p>
+          </div>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FLOW ===== -->
+<section id="flow" class="py-24 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="mb-14">
+      <p class="sec-tag">FLOW</p>
+      <h2 class="text-3xl font-black text-gray-900 mb-2">契約までの流れ</h2>
+      <p class="text-sm text-gray-500">地主様のペースに合わせて安定した収益化を実現します。</p>
+    </div>
+    <div class="relative grid grid-cols-1 md:grid-cols-5 gap-4">
+      <!-- connector line desktop -->
+      <div class="hidden md:block absolute top-10 left-[10%] right-[10%] h-px bg-teal-200"></div>
+      <div class="relative flex flex-col items-center text-center px-4 py-6">
+        <div class="w-12 h-12 bg-teal-500 text-white rounded-full flex items-center justify-center font-black text-lg mb-4 shadow-md z-10">1</div>
+        <h3 class="text-sm font-bold text-gray-900 mb-2">お問い合わせ</h3>
+        <p class="text-xs text-gray-500 leading-relaxed">WEBまたはお電話にてご相談ください。</p>
+      </div>
+      <div class="relative flex flex-col items-center text-center px-4 py-6">
+        <div class="w-12 h-12 bg-teal-500 text-white rounded-full flex items-center justify-center font-black text-lg mb-4 shadow-md z-10">2</div>
+        <h3 class="text-sm font-bold text-gray-900 mb-2">現地調査・査定</h3>
+        <p class="text-xs text-gray-500 leading-relaxed">専門スタッフが土地の立地や需要を調査いたします。</p>
+      </div>
+      <div class="relative flex flex-col items-center text-center px-4 py-6">
+        <div class="w-12 h-12 bg-teal-500 text-white rounded-full flex items-center justify-center font-black text-lg mb-4 shadow-md z-10">3</div>
+        <h3 class="text-sm font-bold text-gray-900 mb-2">ご提案・お見積り</h3>
+        <p class="text-xs text-gray-500 leading-relaxed">最適な土地活用・収益プランをご提案いたします。</p>
+      </div>
+      <div class="relative flex flex-col items-center text-center px-4 py-6">
+        <div class="w-12 h-12 bg-teal-500 text-white rounded-full flex items-center justify-center font-black text-lg mb-4 shadow-md z-10">4</div>
+        <h3 class="text-sm font-bold text-gray-900 mb-2">ご契約</h3>
+        <p class="text-xs text-gray-500 leading-relaxed">署名・捺印にてご契約。郵送・事務所・ご自宅にて対応可能。</p>
+      </div>
+      <div class="relative flex flex-col items-center text-center px-4 py-6">
+        <div class="w-12 h-12 bg-teal-600 text-white rounded-full flex items-center justify-center font-black text-lg mb-4 shadow-md z-10">5</div>
+        <h3 class="text-sm font-bold text-gray-900 mb-2">地代収入</h3>
+        <p class="text-xs text-gray-500 leading-relaxed">3ヶ月毎に入庫状況・精算・報告書を送付いたします。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COMPANY ===== -->
+<section id="company" class="py-24 bg-white">
+  <div class="max-w-4xl mx-auto px-8">
+    <div class="mb-12">
+      <p class="sec-tag">COMPANY</p>
+      <h2 class="text-3xl font-black text-gray-900">会社概要</h2>
+    </div>
+    <div class="border border-gray-200 rounded-2xl overflow-hidden">
+      <dl>
+        <div class="flex flex-col sm:flex-row border-b border-gray-100">
+          <dt class="sm:w-1/3 bg-gray-50 px-6 py-4 text-sm font-bold text-gray-500">会社名</dt>
+          <dd class="sm:w-2/3 px-6 py-4 text-sm text-gray-900 font-bold">株式会社えぞ企画</dd>
+        </div>
+        <div class="flex flex-col sm:flex-row border-b border-gray-100">
+          <dt class="sm:w-1/3 bg-gray-50 px-6 py-4 text-sm font-bold text-gray-500">代表取締役</dt>
+          <dd class="sm:w-2/3 px-6 py-4 text-sm text-gray-800">安田 晶代</dd>
+        </div>
+        <div class="flex flex-col sm:flex-row border-b border-gray-100">
+          <dt class="sm:w-1/3 bg-gray-50 px-6 py-4 text-sm font-bold text-gray-500">本社所在地</dt>
+          <dd class="sm:w-2/3 px-6 py-4 text-sm text-gray-800">北海道札幌市中央区南7条西2丁目1番地3</dd>
+        </div>
+        <div class="flex flex-col sm:flex-row border-b border-gray-100">
+          <dt class="sm:w-1/3 bg-gray-50 px-6 py-4 text-sm font-bold text-gray-500">電話</dt>
+          <dd class="sm:w-2/3 px-6 py-4 text-sm text-gray-800">011-512-5351</dd>
+        </div>
+        <div class="flex flex-col sm:flex-row border-b border-gray-100">
+          <dt class="sm:w-1/3 bg-gray-50 px-6 py-4 text-sm font-bold text-gray-500">設立</dt>
+          <dd class="sm:w-2/3 px-6 py-4 text-sm text-gray-800">昭和42年(1967年)4月1日</dd>
+        </div>
+        <div class="flex flex-col sm:flex-row border-b border-gray-100">
+          <dt class="sm:w-1/3 bg-gray-50 px-6 py-4 text-sm font-bold text-gray-500">資本金</dt>
+          <dd class="sm:w-2/3 px-6 py-4 text-sm text-gray-800">¥20,000,000-</dd>
+        </div>
+        <div class="flex flex-col sm:flex-row border-b border-gray-100">
+          <dt class="sm:w-1/3 bg-gray-50 px-6 py-4 text-sm font-bold text-gray-500">従業員数</dt>
+          <dd class="sm:w-2/3 px-6 py-4 text-sm text-gray-800">30名</dd>
+        </div>
+        <div class="flex flex-col sm:flex-row border-b border-gray-100">
+          <dt class="sm:w-1/3 bg-gray-50 px-6 py-4 text-sm font-bold text-gray-500">事業内容</dt>
+          <dd class="sm:w-2/3 px-6 py-4 text-sm text-gray-800 leading-relaxed">
+            店舗・オフィス設計施工／住宅リフォーム事業／パーキング事業／コミュニケーション事業
+          </dd>
+        </div>
+        <div class="flex flex-col sm:flex-row">
+          <dt class="sm:w-1/3 bg-gray-50 px-6 py-4 text-sm font-bold text-gray-500">免許・所属</dt>
+          <dd class="sm:w-2/3 px-6 py-4 text-sm text-gray-800">(公社)全日本不動産協会会員</dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT CTA ===== -->
+<section id="contact" class="py-24 bg-teal-50">
+  <div class="max-w-3xl mx-auto px-8 text-center">
+    <p class="sec-tag-center">CONTACT</p>
+    <h2 class="text-3xl font-black text-gray-900 mb-4 mt-2">まずはお気軽にご相談ください</h2>
+    <p class="text-sm text-gray-500 mb-10 leading-relaxed">
+      弊社スタッフが現地を調査し、土地活用・収益プランをご提案いたします。<br/>
+      無理な勧誘は一切ございませんのでご安心ください。
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="mailto:info@ezokikaku.co.jp" class="inline-flex items-center justify-center gap-2 bg-teal-500 hover:bg-teal-600 text-white px-10 py-4 rounded-full font-bold text-sm shadow-lg transition-all">
+        <span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">mail</span>
+        メールでお問い合わせ
+      </a>
+      <a href="tel:0115125351" class="inline-flex items-center justify-center gap-2 bg-white border border-teal-200 text-teal-600 px-10 py-4 rounded-full font-bold text-sm hover:bg-teal-50 transition-colors">
+        <span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">call</span>
+        011-512-5351
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="bg-gray-900 text-gray-400 py-14">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="flex flex-col md:flex-row justify-between gap-10 mb-10">
+      <div class="max-w-sm">
+        <div class="text-white font-black text-lg mb-3">株式会社えぞ企画</div>
+        <p class="text-sm leading-relaxed">
+          北海道を中心に、50年以上の実績を持つ<br/>土地活用・駐車場運営のプロフェッショナル。
+        </p>
+      </div>
+      <div class="flex gap-12 text-sm">
+        <div>
+          <h4 class="text-white font-bold mb-4">ページ内リンク</h4>
+          <ul class="space-y-2.5">
+            <li><a href="#point" class="hover:text-white transition-colors">選ばれる理由</a></li>
+            <li><a href="#service" class="hover:text-white transition-colors">サービス内容</a></li>
+            <li><a href="#flow" class="hover:text-white transition-colors">契約の流れ</a></li>
+            <li><a href="#faq" class="hover:text-white transition-colors">よくある質問</a></li>
+            <li><a href="#company" class="hover:text-white transition-colors">会社概要</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-4">法務規定</h4>
+          <ul class="space-y-2.5">
+            <li><a href="#" class="hover:text-white transition-colors">プライバシーポリシー</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">利用規約</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-gray-800 pt-6 text-xs text-center md:text-left">
+      © 2026 株式会社えぞ企画 All Rights Reserved. (公社)全日本不動産協会会員
+    </div>
+  </div>
 </footer>
-</body></html>
+
+</body>
+</html>
