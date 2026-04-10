@@ -128,26 +128,29 @@ tailwind.config = {
     <img src="./hero-bg.jpg" alt="" class="w-full h-full object-cover opacity-60"/>
   </div>
   <div class="relative z-10 max-w-7xl mx-auto px-8 pt-28 pb-0 w-full">
-    <div class="max-w-lg">
-      <div class="inline-flex items-center gap-2 bg-white text-teal-700 text-xs font-bold px-4 py-2 rounded-full mb-8 border border-teal-200 shadow-sm">
-        <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">verified</span>
-        創業1967年・50年以上の信頼
+    <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-0">
+      <!-- Left: text content -->
+      <div class="w-full lg:w-1/2 shrink-0 pb-10">
+        <div class="inline-flex items-center gap-2 bg-white text-teal-700 text-xs font-bold px-4 py-2 rounded-full mb-8 border border-teal-200 shadow-sm">
+          <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">verified</span>
+          創業1967年・50年以上の信頼
+        </div>
+        <h1 class="text-4xl lg:text-6xl font-black text-gray-900 mb-8" style="line-height:1.2">
+          あなたの<br/>大切な土地を、<br/><span class="text-teal-500">駐車場運営</span>で<br/>安定した収入源に。
+        </h1>
+        <p class="text-base text-gray-500 leading-relaxed mb-10">
+          50年以上培ってきたノウハウで、あなたの土地に新しい価値を。<br/>
+          えぞ企画は、地主様に寄り添う不動産の頼れるパートナーです。
+        </p>
+        <a href="#contact" class="inline-flex items-center justify-center gap-2 btn-grad w-full sm:w-auto px-8 py-4 rounded-full font-bold text-sm shadow-lg">
+          まずはお気軽にお問い合わせください
+          <span class="material-symbols-outlined text-lg">arrow_forward</span>
+        </a>
       </div>
-      <h1 class="text-4xl lg:text-6xl font-black text-gray-900 mb-8" style="line-height:1.2">
-        あなたの<br/>大切な土地を、<br/><span class="text-teal-500">駐車場運営</span>で<br/>安定した収入源に。
-      </h1>
-      <p class="text-base text-gray-500 leading-relaxed mb-10">
-        50年以上培ってきたノウハウで、あなたの土地に新しい価値を。<br/>
-        えぞ企画は、地主様に寄り添う不動産の頼れるパートナーです。
-      </p>
-      <a href="#contact" class="inline-flex items-center justify-center gap-2 btn-grad w-full sm:w-auto px-8 py-4 rounded-full font-bold text-sm shadow-lg mb-10">
-        まずはお気軽にお問い合わせください
-        <span class="material-symbols-outlined text-lg">arrow_forward</span>
-      </a>
-    </div>
-    <!-- P.svg illustration — below button, full width -->
-    <div class="w-full">
-      <img src="./P.svg" alt="えぞ企画 駐車場" class="w-full max-w-2xl mx-auto lg:max-w-none lg:ml-0 block"/>
+      <!-- Right: P.svg illustration -->
+      <div class="w-full lg:w-1/2 flex items-end justify-center lg:justify-end self-end">
+        <img src="./P.svg" alt="えぞ企画 駐車場" class="w-full max-w-lg lg:max-w-none block"/>
+      </div>
     </div>
   </div>
 </section>
