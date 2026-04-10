@@ -88,6 +88,52 @@ tailwind.config = {
     box-shadow: 0 8px 24px rgba(0,168,150,0.35);
   }
 
+  /* Scroll animation */
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1);
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1);
+  }
+  .reveal-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .reveal-right {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1);
+  }
+  .reveal-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  /* Hero initial animation */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero-anim > * {
+    opacity: 0;
+    animation: fadeUp 0.75s cubic-bezier(0.22,1,0.36,1) forwards;
+  }
+  .hero-anim > *:nth-child(1) { animation-delay: 0.1s; }
+  .hero-anim > *:nth-child(2) { animation-delay: 0.25s; }
+  .hero-anim > *:nth-child(3) { animation-delay: 0.4s; }
+  .hero-anim > *:nth-child(4) { animation-delay: 0.55s; }
+  .hero-img-anim {
+    opacity: 0;
+    animation: fadeUp 0.9s cubic-bezier(0.22,1,0.36,1) 0.5s forwards;
+  }
+
   /* FAQ open state */
   .faq-item[open] .faq-icon {
     transform: rotate(180deg);
@@ -130,7 +176,7 @@ tailwind.config = {
   <div class="relative z-10 max-w-7xl mx-auto px-8 pt-28 pb-0 w-full">
     <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-0">
       <!-- Left: text content -->
-      <div class="w-full lg:w-1/2 shrink-0 pb-10">
+      <div class="w-full lg:w-1/2 shrink-0 pb-10 hero-anim">
         <div class="inline-flex items-center gap-2 bg-white text-teal-700 text-xs font-bold px-4 py-2 rounded-full mb-8 border border-teal-200 shadow-sm">
           <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">verified</span>
           創業1967年・50年以上の信頼
@@ -148,7 +194,7 @@ tailwind.config = {
         </a>
       </div>
       <!-- Right: P.svg illustration -->
-      <div class="w-full lg:w-1/2 flex items-end justify-center lg:justify-end self-end">
+      <div class="w-full lg:w-1/2 flex items-end justify-center lg:justify-end self-end hero-img-anim">
         <img src="./P.svg" alt="えぞ企画 駐車場" class="w-full max-w-lg lg:max-w-none block"/>
       </div>
     </div>
@@ -161,7 +207,7 @@ tailwind.config = {
   <div class="max-w-3xl mx-auto px-8">
     <h2 class="text-2xl font-black text-gray-900 mb-8 text-center">こんなお悩みありませんか？</h2>
     <!-- 吹き出し大カード -->
-    <div class="relative bg-white rounded-3xl p-10 shadow-xl border border-gray-100">
+    <div id="pain-points-card" class="relative bg-white rounded-3xl p-10 shadow-xl border border-gray-100">
       <!-- 吹き出し三角 -->
       <div class="absolute -bottom-6 left-1/2 -translate-x-1/2 w-0 h-0"
            style="border-left: 24px solid transparent; border-right: 24px solid transparent; border-top: 24px solid #ffffff; filter: drop-shadow(0 6px 4px rgba(0,0,0,0.10));"></div>
@@ -566,6 +612,86 @@ tailwind.config = {
     </div>
   </div>
 </footer>
+
+<script>
+(function () {
+  // Intersection Observer for scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  // Add reveal classes and observe
+  function addReveal(selector, cls, delayStep) {
+    document.querySelectorAll(selector).forEach((el, i) => {
+      el.classList.add(cls);
+      if (delayStep) el.style.transitionDelay = (i * delayStep) + 's';
+      observer.observe(el);
+    });
+  }
+
+  // Section headings
+  addReveal('.sec-tag, .sec-tag-center', 'reveal', 0);
+  addReveal('h2:not(.hero-anim h2)', 'reveal', 0);
+
+  // Pain points card & tagline
+  addReveal('#pain-card', 'reveal', 0);
+
+  // POINT cards — stagger
+  document.querySelectorAll('#point .grid > div').forEach((el, i) => {
+    el.classList.add('reveal');
+    el.style.transitionDelay = (i * 0.1) + 's';
+    observer.observe(el);
+  });
+
+  // FAQ items — stagger
+  document.querySelectorAll('.faq-item').forEach((el, i) => {
+    el.classList.add('reveal');
+    el.style.transitionDelay = (i * 0.07) + 's';
+    observer.observe(el);
+  });
+
+  // FLOW steps — stagger
+  document.querySelectorAll('#flow .grid > div').forEach((el, i) => {
+    el.classList.add('reveal');
+    el.style.transitionDelay = (i * 0.1) + 's';
+    observer.observe(el);
+  });
+
+  // Map section
+  addReveal('#map .rounded-2xl', 'reveal', 0);
+
+  // Company table
+  addReveal('#company .rounded-2xl', 'reveal', 0);
+
+  // Contact section
+  addReveal('#contact h2, #contact p, #contact .flex', 'reveal', 0.08);
+
+  // MID CTA
+  document.querySelectorAll('section.py-16 > div > div').forEach((el, i) => {
+    el.classList.add('reveal');
+    el.style.transitionDelay = (i * 0.15) + 's';
+    observer.observe(el);
+  });
+
+  // SERVICE cards
+  document.querySelectorAll('#service .grid > div').forEach((el, i) => {
+    el.classList.add('reveal');
+    el.style.transitionDelay = (i * 0.1) + 's';
+    observer.observe(el);
+  });
+
+  // Pain points bubble card + tagline
+  ['#pain-points-card'].forEach(sel => {
+    const el = document.querySelector(sel);
+    if (el) { el.classList.add('reveal'); observer.observe(el); }
+  });
+})();
+</script>
 
 </body>
 </html>
