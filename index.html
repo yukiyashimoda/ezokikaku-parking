@@ -103,7 +103,7 @@ tailwind.config = {
 <header class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm">
   <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between gap-4">
     <div class="flex items-center gap-3 shrink-0">
-      <div class="text-xl font-black text-teal-600 tracking-tight">えぞ企画</div>
+      <div class="text-xl font-black text-teal-600 tracking-tight">駐車場運営はえぞ企画</div>
       <span class="hidden sm:block text-xs text-gray-400 border-l border-gray-200 pl-3 leading-tight">
         駐車場運営・土地活用
       </span>
@@ -115,7 +115,7 @@ tailwind.config = {
       <a href="#faq" class="hover:text-teal-600 transition-colors">よくある質問</a>
       <a href="#company" class="hover:text-teal-600 transition-colors">会社概要</a>
     </nav>
-    <a href="#contact" class="shrink-0 btn-grad px-5 py-2.5 rounded-full text-sm font-bold shadow">
+    <a href="https://ezopkg.com/?act=owner" target="_blank" rel="noopener noreferrer" class="shrink-0 btn-grad px-5 py-2.5 rounded-full text-sm font-bold shadow">
       お問い合わせ
     </a>
   </div>
@@ -142,7 +142,7 @@ tailwind.config = {
           50年以上培ってきたノウハウで、あなたの土地に新しい価値を。<br/>
           えぞ企画は、地主様に寄り添う不動産の頼れるパートナーです。
         </p>
-        <a href="#contact" class="inline-flex items-center justify-center gap-2 btn-grad w-full sm:w-auto px-8 py-4 rounded-full font-bold text-sm shadow-lg">
+        <a href="https://ezopkg.com/?act=owner" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 btn-grad w-full sm:w-auto px-8 py-4 rounded-full font-bold text-sm shadow-lg">
           まずはお気軽にお問い合わせください
           <span class="material-symbols-outlined text-lg">arrow_forward</span>
         </a>
@@ -282,12 +282,15 @@ tailwind.config = {
       </h2>
     </div>
     <div class="flex flex-col items-center gap-3 shrink-0">
-      <a href="#contact" class="btn-grad px-10 py-4 rounded-full font-black text-sm shadow-xl whitespace-nowrap">
+      <a href="https://ezopkg.com/?act=owner" target="_blank" rel="noopener noreferrer" class="btn-grad px-10 py-4 rounded-full font-black text-sm shadow-xl whitespace-nowrap">
         お問い合わせはこちら
       </a>
-      <a href="tel:0115125351" class="text-white/80 text-sm font-bold tracking-wide hover:text-white transition-colors">
-        ☎ 011-512-5351
-      </a>
+      <div class="text-center">
+        <a href="tel:0115125351" class="text-white/80 text-sm font-bold tracking-wide hover:text-white transition-colors">
+          ☎ 011-512-5351
+        </a>
+        <p class="text-white/60 text-xs mt-1">営業時間 平日9:00〜17:00</p>
+      </div>
     </div>
   </div>
 </section>
@@ -519,14 +522,17 @@ tailwind.config = {
       無理な勧誘は一切ございませんのでご安心ください。
     </p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="mailto:info@ezokikaku.co.jp" class="inline-flex items-center justify-center gap-2 btn-grad px-10 py-4 rounded-full font-bold text-sm shadow-lg">
+      <a href="https://ezopkg.com/?act=owner" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 btn-grad px-10 py-4 rounded-full font-bold text-sm shadow-lg">
         <span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">mail</span>
-        メールでお問い合わせ
+        お問い合わせはこちら
       </a>
-      <a href="tel:0115125351" class="inline-flex items-center justify-center gap-2 bg-white border border-teal-200 text-teal-600 px-10 py-4 rounded-full font-bold text-sm hover:bg-teal-50 transition-colors">
-        <span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">call</span>
-        011-512-5351
-      </a>
+      <div class="text-center">
+        <a href="tel:0115125351" class="inline-flex items-center justify-center gap-2 bg-white border border-teal-200 text-teal-600 px-10 py-4 rounded-full font-bold text-sm hover:bg-teal-50 transition-colors">
+          <span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">call</span>
+          011-512-5351
+        </a>
+        <p class="text-gray-400 text-xs mt-2">営業時間 平日9:00〜17:00</p>
+      </div>
     </div>
   </div>
 </section>
@@ -552,13 +558,7 @@ tailwind.config = {
             <li><a href="#company" class="hover:text-white transition-colors">会社概要</a></li>
           </ul>
         </div>
-        <div>
-          <h4 class="text-white font-bold mb-4">法務規定</h4>
-          <ul class="space-y-2.5">
-            <li><a href="#" class="hover:text-white transition-colors">プライバシーポリシー</a></li>
-            <li><a href="#" class="hover:text-white transition-colors">利用規約</a></li>
-          </ul>
-        </div>
+        <!-- 法務規定非表示 -->
       </div>
     </div>
     <div class="border-t border-gray-800 pt-6 text-xs text-center md:text-left">
